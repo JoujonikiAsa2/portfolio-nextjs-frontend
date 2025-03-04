@@ -8,19 +8,19 @@ const Banner = () => {
   const theme = useAppSelector((state) => state.theme.theme);
   return (
     <div
-      className={`w-full h-full md:h-screen flex items-center px-2 pt-28 md:pt-0 md:px-0 ${
+      className={`w-full h-full md:h-screen flex items-center px-2 py-28 md:pt-6 lg:pt-0 md:px-4 lg:px-0 ${
         theme === "dark" ? "bg-[#0F0715] text-white" : "bg-[#FFFFFF]"
       }`}
     >
       <div className="flex flex-col md:flex-row gap-6 items-center justify-start max-w-7xl  mx-auto h-full">
-        <div className="w-full md:w-1/2">
+        <div className="w-full text-center md:text-left md:w-1/2">
           <div className="space-y-4">
             <h3 className="text-xl font-bold uppercase text-[#8750F7]">Hi</h3>
             <h5 className="text-xl font-bold uppercase">
               I&apos;m Joujoniki Asa Roy
             </h5>
             <p>Passionate</p>
-            <div className={` text-2xl md:text-4xl font-bold uppercase inline-block text-transparent bg-clip-text h-40 flex items-center ${theme === "dark" ? "bg-gradient-to-r from-[#8750F7] to-[#DCCCFD]" : "bg-gradient-to-r from-[#8750F7] to-[#0F0715]"}`}>
+            <div className={` text-2xl md:text-4xl font-bold uppercase inline-block text-transparent bg-clip-text sm:h-20 h-40 md:h-40 flex items-center ${theme === "dark" ? "bg-gradient-to-r from-[#8750F7] to-[#DCCCFD]" : "bg-gradient-to-r from-[#8750F7] to-[#0F0715]"}`}>
               <TypeAnimation
                 sequence={[
                   "Web developer",
@@ -44,7 +44,7 @@ const Banner = () => {
           </div>
         </div>
         <div className=" relative w-full md:flex-1 flex items-center justify-center">
-          <div className="w-full flex items-end justify-end z-10 dark:drop-shadow-2xl">
+          <div className="w-full flex items-end justify-center md:justify-end z-10 dark:drop-shadow-2xl">
             <Image
               src={formal}
               alt="Formal Pic"
@@ -73,6 +73,17 @@ const Banner = () => {
             right: 0,
           }}
           className="rounded-br-full bg-[#8750F7] blur-3xl"
+        ></div>
+        <div
+          style={{
+            width: 200,
+            height: 200,
+            position: "absolute",
+            opacity: 0.2,
+            bottom : 0,
+             left:0,
+          }}
+          className="rounded-bl-full bg-[#8750F7] blur-3xl"
         ></div>
       </div>
     </div>
