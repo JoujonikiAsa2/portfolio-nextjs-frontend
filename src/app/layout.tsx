@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { rajdhani, roboto_mono } from "./font";
+import { Sora } from 'next/font/google'
+import StoreProvider from "./storeProvider";
 
+const sora = Sora({ subsets: ['latin'] })
 
 
 export const metadata: Metadata = {
@@ -17,9 +19,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${rajdhani.className} ${roboto_mono.className} antialiased`}
+        className={`${sora.className} antialiased` }
       >
-        {children}
+       <StoreProvider>{children}</StoreProvider>
       </body>
     </html>
   );
