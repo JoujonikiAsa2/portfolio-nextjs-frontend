@@ -1,7 +1,8 @@
 "use client"
-import Banner from "@/components/Banner";
+import Banner from "@/components/home/Banner";
+import FeaturedProjects from "@/components/home/FeaturedProjects";
 import Loader from "@/components/shared/Loader";
-import Skills from "@/components/Skills";
+import Skills from "@/components/home/Skills";
 import { useState } from "react";
 
 export default function Home() {
@@ -14,6 +15,7 @@ export default function Home() {
     <div className="">
       <Banner/>
       <Skills/>
+      <FeaturedProjects/>
     </div>
   );
 }

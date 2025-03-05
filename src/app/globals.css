@@ -200,6 +200,18 @@ body {
   animation: rain 1s infinite ease-in-out;
 }
 
+
+
+.preview{
+  display: none;
+}
+
+.project-card:hover .preview{
+  visibility: visible;
+  display: flex;
+}
+
+
 @keyframes slide-in-top {
   0% {
     transform: translateY(-100px);

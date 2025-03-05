@@ -1,11 +1,13 @@
-import Drawer from "@/components/Drawer";
+import Drawer from "@/components/shared/Drawer";
 import Footer from "@/components/shared/Footer";
 import Navbar from "@/components/shared/Navbar";
 import React from "react";
+import StoreProvider from '../storeProvider'
 
 
 const MainLayout = ({ children }: { children: React.ReactNode }) => {
   return (
+    <StoreProvider>
     <div className="relative w-full h-full">
       <Navbar />
       <Drawer/>
@@ -14,6 +16,7 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
         <Footer />
       </div>
     </div>
+    </StoreProvider>
   );
 };
 

@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import StoreProvider from "./storeProvider";
 import { sora } from "./font";
 
 
@@ -19,7 +18,7 @@ export default function RootLayout({
       <body
         className={`${sora.className} antialiased` }
       >
-       <StoreProvider>{children}</StoreProvider>
+       {children}
       </body>
     </html>
   );

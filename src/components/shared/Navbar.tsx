@@ -13,14 +13,12 @@ import { roboto } from "@/app/font";
 const Navbar = () => {
   const dispatch = useAppDispatch();
   const theme = useAppSelector((state) => state.theme.theme);
-  
   const clicked = useAppSelector((state) => state.menu.isClicked);
-  console.log(theme);
-  const screenWidth = window.outerWidth;
-
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
+  const [screenWidth, setScreenWidth] = useState<number>(301);
 
   useEffect(() => {
+    setScreenWidth(window.outerWidth)
     const handleScroll = () => {
       const scroll = window.scrollY;
       setIsScrolled(scroll >= 64);
@@ -32,7 +30,6 @@ const Navbar = () => {
     };
   }, []);
 
-  console.log(screenWidth);
   return (
       <div
         className={`w-full z-50 px-2 lg:px-0  flex justify-center ${
