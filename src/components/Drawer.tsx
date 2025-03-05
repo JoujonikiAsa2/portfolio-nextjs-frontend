@@ -16,7 +16,7 @@ const Drawer = () => {
     <>
       {clicked === true && (
         <div className="h-[100vh] fixed w-full z-50 right-0 flex drawer-animation">
-          <div className="flex-1 bg-black opacity-90 blur-sm"></div>
+          <div className="flex-1 bg-black opacity-90"></div>
           <div
             className={` w-[80vw] h-screen sm:w-96 p-4 ${
               theme === "dark" ? "bg-[#0F0715]" : "bg-[#FFFFFF]"
@@ -70,37 +70,42 @@ const Drawer = () => {
             </div>
             <div className="pt-20">
               <p className="pb-4 text-[#7F7F7F]">FIND ME HERE</p>
-              <div className="flex justify-between">
-                <div className="space-x-2">
-                  <Link
-                    href={"https://www.linkedin.com/in/joujonikiasaroy/"}
-                    target="_blank"
-                  >
-                    <Button
-                      className={`bg-white text-black hover:text-white ${
-                        theme === "dark" ? "" : "border border-gray-200"
-                      }`}
+              <div className="flex gap-6">
+                <div className="flex gap-4">
+                  <div>
+                    <Link
+                      href={"https://www.linkedin.com/in/joujonikiasaroy/"}
+                      target="_blank"
                     >
-                      <TiSocialLinkedin />
-                    </Button>
-                  </Link>
-                  <Link
-                    href={"https://github.com/JoujonikiAsa2"}
-                    target="_blank"
-                  >
-                    <Button
-                      className={`bg-white text-black hover:text-white ${
-                        theme === "dark" ? "" : "border border-gray-200"
-                      }`}
+                      <Button
+                        className={`bg-white text-black hover:text-white ${
+                          theme === "dark" ? "" : "border border-gray-200"
+                        }`}
+                      >
+                        <TiSocialLinkedin />
+                      </Button>
+                    </Link>
+                  </div>
+                  <div>
+                    <Link
+                      href={"https://github.com/JoujonikiAsa2"}
+                      target="_blank"
                     >
-                      <FiGithub />
+                      <Button
+                        className={`bg-white text-black hover:text-white ${
+                          theme === "dark" ? "" : "border border-gray-200"
+                        }`}
+                      >
+                        <FiGithub />
+                      </Button>
+                    </Link>
+                  </div>
+
+                  <div className="">
+                    <Button>
+                      Login <LogIn />
                     </Button>
-                  </Link>
-                </div>
-                <div className="login-button">
-                  <Button>
-                    Login <LogIn />
-                  </Button>
+                  </div>
                 </div>
               </div>
             </div>
