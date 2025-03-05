@@ -5,6 +5,9 @@ import { useAppSelector } from "@/lib/hook";
 import { TypeAnimation } from "react-type-animation";
 import { DownloadIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { roboto } from "@/app/font";
+
+
 
 type cornerStyle = {
   style: Record<string, unknown>,
@@ -51,7 +54,7 @@ const Banner = () => {
   ];
   return (
     <div
-      className={`relative  w-full h-full md:h-screen flex flex-col items-center justify-center px-2 py-28 md:py-6 lg:py-0 md:px-4 lg:px-0 ${
+      className={`relative  w-full  h-[900px] flex flex-col items-center justify-center px-2 py-28 md:py-6 lg:py-0 md:px-4 lg:px-0 ${
         theme === "dark" ? "bg-[#0F0715] text-white" : "bg-white"
       }`}
     >
@@ -84,7 +87,7 @@ const Banner = () => {
                 repeat={Infinity}
               />
             </div>
-            <p>
+            <p className={`${roboto.className} font-normal`}>
               Always learning and pushing boundaries, I&apos;m excited to build
               innovative, performance-driven web applications. Let&apos;s create
               something amazing together!

@@ -1,11 +1,11 @@
-import { Roboto_Mono, Rajdhani } from 'next/font/google'
+import { Sora, Roboto } from 'next/font/google'
  
-export const roboto_mono = Roboto_Mono({
+export const roboto = Roboto({
   subsets: ['latin'],
   display: 'swap',
 })
 
-export const rajdhani = Rajdhani({
+export const sora = Sora({
   weight: ['300', '400', '500', '600', '700'],
   subsets: ['latin'],
   display: 'swap',

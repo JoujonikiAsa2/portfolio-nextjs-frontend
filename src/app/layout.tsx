@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Sora } from 'next/font/google'
 import StoreProvider from "./storeProvider";
-
-const sora = Sora({ subsets: ['latin'] })
+import { sora } from "./font";
 
 
 export const metadata: Metadata = {

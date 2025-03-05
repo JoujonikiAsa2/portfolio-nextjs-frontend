@@ -9,8 +9,8 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
     <div className="relative w-full h-full">
       <Navbar />
       <Drawer/>
-      <div className="pb-48">{children}</div>
-      <div className="absolute bottom-0 w-full bg-[#060606]">
+      <div>{children}</div>
+      <div className="w-full bg-[#060606]">
         <Footer />
       </div>
     </div>

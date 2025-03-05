@@ -8,6 +8,7 @@ import { TiSocialLinkedin } from "react-icons/ti";
 import { FiGithub } from "react-icons/fi";
 import Link from "next/link";
 import { setMenu } from "@/lib/menu/menuSlice";
+import { roboto } from "@/app/font";
 
 const Navbar = () => {
   const dispatch = useAppDispatch();
@@ -57,7 +58,7 @@ const Navbar = () => {
             <h2 className="uppercase">Joujoniki</h2>
           </div>
           <div>
-            <ul className="navbar-links">
+            <ul className={`navbar-links ${roboto.className} font-normal`}>
               <Link href="/"><li className="hover:cursor-pointer">Home</li></Link>
               <Link href="/about"><li className="hover:cursor-pointer">About</li></Link>
               <Link href="/projects"><li className="hover:cursor-pointer">Projects</li></Link>
