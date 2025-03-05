@@ -1,3 +1,4 @@
+"use client"
 import { roboto } from "@/app/font";
 import { useAppSelector } from "@/lib/hook";
 import React from "react";
@@ -7,7 +8,7 @@ const SectionTitle = ({
   subTitle,
 }: {
   title: string;
-  subTitle: string;
+  subTitle?: string;
 }) => {
     const theme = useAppSelector((state) => state.theme.theme);
   return (
@@ -21,7 +22,7 @@ const SectionTitle = ({
       >
         <h3 className="">{title}</h3>
       </div>
-      <p className={`${roboto.className} font-normal`}>{subTitle}</p>
+      <p className={`${roboto.className} font-normal max-w-[800px] pt-6  ${ theme === "dark" ? "text-[#dddddd]" : "text-black"}`}>{subTitle}</p>
     </div>
   );
 };

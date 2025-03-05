@@ -66,7 +66,7 @@ const Banner = () => {
               <h5 className="text-xl font-bold uppercase">
                 I&apos;m Joujoniki Asa Roy
               </h5>
-              <p>Passionate</p>
+              <p className={` ${ theme === "dark" ? "text-[#dddddd]" : "text-black"}`}>Passionate</p>
               <div
                 className={`text-sm sm:text-2xl md:text-3xl lg:text-5xl font-bold uppercase inline-block text-transparent bg-clip-text  flex items-center ${
                   theme === "dark"
@@ -88,7 +88,7 @@ const Banner = () => {
                   repeat={Infinity}
                 />
               </div>
-              <p className={`${roboto.className} font-normal`}>
+              <p className={`${roboto.className} font-normal  ${ theme === "dark" ? "text-[#dddddd]" : "text-black"}`}>
                 Always learning and pushing boundaries, I&apos;m excited to
                 build innovative, performance-driven web applications.
                 Let&apos;s create something amazing together!

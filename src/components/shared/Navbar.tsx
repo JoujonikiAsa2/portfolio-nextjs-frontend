@@ -55,7 +55,7 @@ const Navbar = () => {
             <h2 className="uppercase">Joujoniki</h2>
           </div>
           <div>
-            <ul className={`navbar-links ${roboto.className} font-normal`}>
+            <ul className={`navbar-links ${roboto.className} font-normal ${ theme === "dark" ? "text-[#dddddd]" : "text-black"}`}>
               <Link href="/"><li className="hover:cursor-pointer">Home</li></Link>
               <Link href="/about"><li className="hover:cursor-pointer">About</li></Link>
               <Link href="/projects"><li className="hover:cursor-pointer">Projects</li></Link>
