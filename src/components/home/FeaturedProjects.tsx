@@ -1,21 +1,14 @@
 import React from 'react';
 import SectionTitle from '../shared/SectionTitle';
-import { useAppSelector } from "@/lib/hook";
 import project1 from '@/assets/banner-shape.png'
 import Image from 'next/image';
 import Link from 'next/link';
-import CustomContainer from "../shared/CustomContainer";
+import DarkContainer from "../shared/DarkContainer";
 
 const FeaturedProjects = () => {
-    const theme = useAppSelector((state) => state.theme.theme);
     const projects = Array.from({ length: 2 });
     return (
-        <div  className={`h-full py-24 px-2 lg:px-0 w-full flex gap-6 items-center justify-center ${
-            theme === "dark"
-              ? "bg-[#0F0715] text-white"
-              : "bg-white text-black"
-          }`}>
-            <CustomContainer>
+            <DarkContainer>
                 <div className="h-full w-full flex flex-col items-center justify-between">
                 <SectionTitle title='Featured Projects' subTitle=""/>
                 <div className='w-full flex flex-wrap justify-between'>      
@@ -36,8 +29,7 @@ const FeaturedProjects = () => {
                     }
                 </div>
                 </div>
-            </CustomContainer>
-        </div>
+            </DarkContainer>
     );
 };
 

@@ -46,13 +46,13 @@ const Navbar = () => {
       >
         <div className="navbar container lg:mx-[10vw] 2xl:mx-[16vw]">
           <div
-            className={`text-xl font-bold uppercase inline-block text-transparent bg-clip-text ${
+            className={`hover:cursor-pointer text-xl font-bold uppercase inline-block text-transparent bg-clip-text ${
               theme === "dark"
                 ? "bg-gradient-to-r from-[#8750F7] to-[#DCCCFD]"
                 : "bg-gradient-to-r from-[#8750F7] to-[#0F0715]"
             }`}
           >
-            <h2 className="uppercase">Joujoniki</h2>
+            <Link href="/">Joujoniki</Link>
           </div>
           <div>
             <ul className={`navbar-links ${roboto.className} font-normal ${ theme === "dark" ? "text-[#dddddd]" : "text-black"}`}>

@@ -7,7 +7,6 @@ import { DownloadIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { roboto } from "@/app/font";
 import Link from "next/link";
-import CustomContainer from "../shared/CustomContainer";
 
 type cornerStyle = {
   style: Record<string, unknown>;
@@ -58,7 +57,7 @@ const Banner = () => {
         theme === "dark" ? "bg-[#0F0715] text-white" : "bg-white"
       }`}
     >
-      <CustomContainer>
+      <div className="flex flex-col lg:flex-row gap-6 items-center justify-center lg:mx-[10vw] 2xl:mx-[16vw] h-full" >
         <div className="h-full w-full flex flex-col md:flex-row items-center justify-between">
           <div className="w-full text-center md:text-left md:w-1/2">
             <div className="space-y-4 w-full">
@@ -157,13 +156,14 @@ const Banner = () => {
                   opacity: 0.2,
                   top: randomTop,
                   left: randomLeft,
+                  transition:"all 2s",
                 }}
                 className="rounded-full bg-[#8750F7]  animate-pulse"
               ></div>
             );
           })}
         </div>
-      </CustomContainer>
+      </div>
     </div>
   );
 };

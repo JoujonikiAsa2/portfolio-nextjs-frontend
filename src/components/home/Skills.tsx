@@ -14,7 +14,7 @@ import { BiLogoTailwindCss } from "react-icons/bi";
 import { FaBootstrap, FaNode } from "react-icons/fa";
 import { SiMongodb } from "react-icons/si";
 import { SiExpress } from "react-icons/si";
-import CustomContainer from "../shared/CustomContainer";
+import LightContainer from "../shared/LightContainer";
 
 const skills = [
   { label: "HTML", icon: <IoLogoHtml5 className="size-12 text-yellow-400" /> },
@@ -50,12 +50,7 @@ const skills = [
 const Skills = () => {
   const theme = useAppSelector((state) => state.theme.theme);
   return (
-    <div
-      className={`h-full py-24 px-2 lg:px-0 w-full flex gap-6 items-center justify-center ${
-        theme === "dark" ? "bg-[#050709] text-white" : "bg-[#F6F3FC] text-black"
-      }`}
-    >
-      <CustomContainer>
+      <LightContainer>
         <div className="h-full w-full flex flex-col md:flex-row items-center justify-between">
           <div className="w-full md:w-[30%] pb-10 flex justify-center md:justify-start">
             <SectionTitle subTitle="" title="My Skills" />
@@ -83,8 +78,7 @@ const Skills = () => {
             ))}
           </div>
         </div>
-      </CustomContainer>
-    </div>
+      </LightContainer>
   );
 };
 
