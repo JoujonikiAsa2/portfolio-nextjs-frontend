@@ -12,7 +12,7 @@ const DarkContainer = ({ children }: { children: React.ReactElement }) => {
           theme === "dark" ? "text-white" : "text-black"
         }`}
       >
-        <div className="lg:mx-[10vw] 2xl:mx-[16vw] container h-full">
+        <div className="w-full sm:w-[40rem] md:w-[48rem] lg:w-[64rem] xl:w-[80rem] mx-auto h-full px-4 lg:px-0 gap-4 h-full">
           {children}
         </div>
       </div>

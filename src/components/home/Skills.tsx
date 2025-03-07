@@ -1,3 +1,4 @@
+"use client";
 import { useAppSelector } from "@/lib/hook";
 import React from "react";
 import SectionTitle from "@/components/shared/SectionTitle";

@@ -52,9 +52,9 @@ const AboutMe = () => {
         theme === "dark" ? "bg-[#0F0715] text-white" : "bg-white"
       }`}
     >
-      <div className="flex flex-col lg:flex-row gap-6 items-center justify-center lg:mx-[10vw] 2xl:mx-[16vw] h-full">
-        <div className="h-full w-full flex flex-col-reverse items-center md:flex-row justify-between">
-          <div className="w-full text-center md:text-left md:w-[60%] ">
+      <div className="py-24 lg:py-0 flex flex-col lg:flex-row gap-6 items-center justify-center w-full sm:w-[40rem] md:w-[48rem] lg:w-[64rem] xl:w-[80rem] mx-auto h-full px-4 lg:px-0 gap-4 h-full">
+        <div className="h-full w-full flex flex-col-reverse items-center md:flex-row justify-between gap-6 ">
+          <div className="w-full md:text-left md:w-[60%] ">
             <div className="space-y-6 w-full">
               <h5
                 className={`${
@@ -65,7 +65,7 @@ const AboutMe = () => {
                 Division, Bangladesh.
               </h5>
               <p
-                className={`${roboto.className} font-normal  ${
+                className={`text-justify ${roboto.className} font-normal  ${
                   theme === "dark" ? "text-[#dddddd]" : "text-black"
                 }`}
               >

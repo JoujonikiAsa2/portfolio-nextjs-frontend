@@ -32,7 +32,7 @@ const Navbar = () => {
 
   return (
       <div
-        className={`w-full z-50 px-2 lg:px-0  flex justify-center ${
+        className={`w-full z-50 px-4 lg:px-0  flex justify-center ${
           isScrolled && theme === "light"
             ? "navabr-fixed-animation fixed w-full bg-gradient-to-r from-[#B7B1F2] to-[#FFFFFF] shadow-lg"
             : "absolute"
@@ -44,9 +44,9 @@ const Navbar = () => {
             : "absolute"
         }`}
       >
-        <div className="navbar container lg:mx-[10vw] 2xl:mx-[16vw]">
+        <div className="px-4 lg:px-0 h-[5rem] w-full sm:w-[40rem] md:w-[48rem] lg:w-[64rem] xl:w-[80rem] mx-auto flex justify-between items-center">
           <div
-            className={`hover:cursor-pointer text-xl font-bold uppercase inline-block text-transparent bg-clip-text ${
+            className={` hover:cursor-pointer text-xl font-bold uppercase inline-block text-transparent bg-clip-text ${
               theme === "dark"
                 ? "bg-gradient-to-r from-[#8750F7] to-[#DCCCFD]"
                 : "bg-gradient-to-r from-[#8750F7] to-[#0F0715]"
