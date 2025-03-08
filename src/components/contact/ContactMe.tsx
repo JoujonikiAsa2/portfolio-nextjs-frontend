@@ -1,23 +1,46 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import { useAppSelector } from "@/lib/hook";
-// import { roboto } from "@/app/font";
-import CustomForm from "../shared/form/CustomForm";
-import CustomInput from "../shared/form/CustomInput";
-import { useForm } from "react-hook-form";
-import CustomTextArea from "../shared/form/CustomTextArea";
-import { Button } from "../ui/button";
 import { Mail, MapPinHouse, Phone } from "lucide-react";
 import Link from "next/link";
 import { TiSocialLinkedin } from "react-icons/ti";
 import { FiGithub } from "react-icons/fi";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+import { Button } from "@/components/ui/button";
+import CustomInput from "@/components/shared/CustomInput";
+import CustomTextArea from "@/components/shared/CustomTextArea";
+import { Form } from "../ui/form";
 
 type cornerStyle = {
   style: Record<string, unknown>;
   side: string;
 };
+
+const contactSchema = z.object({
+  name: z.string({ message: "Name is required" }).nonempty(),
+  phone: z.string().nonempty(),
+  email: z.string().email(),
+  subject: z.string().nonempty(),
+  message: z.string().nonempty(),
+});
+
+type ContactFormValues = z.infer<typeof contactSchema>;
+
 const ContactMe = () => {
-  const form = useForm();
+  const form = useForm<ContactFormValues>({
+    resolver: zodResolver(contactSchema),
+    defaultValues: {
+      name: "",
+      phone: "",
+      email: "",
+      subject: "",
+      message: "",
+    },
+  });
+
+  console.log(form);
   const theme = useAppSelector((state) => state.theme.theme);
   const dots = Array.from({ length: 10 });
   const corners: cornerStyle[] = [
@@ -56,13 +79,13 @@ const ContactMe = () => {
     "90%",
   ];
 
-  const handleContactForm = (data: any) => {
-    console.log(data);
+  const handleContactForm = (data: ContactFormValues) => {
+    console.log(data)
   };
 
   return (
     <div
-      className={`relative  w-full  h-full 2xl:h-screen flex flex-col items-center justify-center px-2 py-28 md:px-4 lg:px-0 ${
+      className={`relative w-full h-full 2xl:h-screen flex flex-col items-center justify-center px-2 py-28 md:px-4 lg:px-0 ${
         theme === "dark" ? "bg-[#0F0715] text-white" : "bg-white"
       }`}
     >
@@ -72,14 +95,14 @@ const ContactMe = () => {
             theme === "dark" ? "bg-[#050709] " : "bg-[#F6F3FC]"
           }`}
         >
-          <div className=" lg:w-[40%] relative w-full lg:flex-1  flex flex-col justify-between">
+          <div className="lg:w-[40%] relative w-full lg:flex-1 flex flex-col justify-between">
             <div className="text-primary rounded-2xl mb-6 lg:mb-0 flex flex-col gap-4 ">
               <div>
-                <p className={`pb-8 text-lg lg:text-2xl font-bold inline-block ${
-                      theme === "dark"
-                        ? "text-white"
-                        : "text-black"
-                    }`}>
+                <p
+                  className={`pb-8 text-lg lg:text-2xl font-bold inline-block ${
+                    theme === "dark" ? "text-white" : "text-black"
+                  }`}
+                >
                   Let&apos;s discuss on something &nbsp;
                   <span
                     className={`text-transparent bg-clip-text ${
@@ -151,40 +174,52 @@ const ContactMe = () => {
             </div>
           </div>
           <div
-            className={`w-full text-justify lg:w-[40%] h-full p-10 rounded-2xl bg-white`}
+            className={`w-full text-justify lg:w-[40%] h-full p-10 rounded-2xl bg-white flex flex-col gap-6`}
           >
-            <div
-              className={`text-justify text-lg lg:text-2xl font-bold capitalize inline-block text-transparent bg-clip-text flex items-center bg-gradient-to-r from-[#8750F7] to-[#0F0715]`}
-            >
-              <h5 className="pb-8">Get in Touch</h5>
+            <div className="text-2xl font-bold text-center">
+              <h1
+                className={`text-transparent bg-clip-text bg-gradient-to-r from-[#8750F7] to-[#0F0715]`}
+              >
+                Get in Touch
+              </h1>
             </div>
-            <CustomForm onSubmit={handleContactForm}>
-              <CustomInput
-                label="Name"
-                placeholder="Name"
-                name="name"
-                form={form}
-              />
-              <CustomInput
-                label="Email"
-                placeholder="Email"
-                name="email"
-                form={form}
-              />
-              <CustomInput
-                label="Subject"
-                placeholder="Subject"
-                name="subject"
-                form={form}
-              />
-              <CustomTextArea
-                label="Message"
-                placeholder="Message"
-                name="message"
-                form={form}
-              />
-              <Button className="w-full rounded-lg">Send Message</Button>
-            </CustomForm>
+            <Form {...form}>
+              <form
+                onSubmit={form.handleSubmit(handleContactForm)}
+                className="space-y-6 text-black"
+              >
+                <CustomInput
+                  type="text"
+                  placeholder="Name"
+                  name="from_name"
+                  required={true}
+                />
+                <CustomInput
+                  type="text"
+                  placeholder="Phone"
+                  name="from_phone"
+                  required={true}
+                />
+                <CustomInput
+                  type="text"
+                  placeholder="Email"
+                  name="from_email"
+                  required={true}
+                />
+                <CustomInput
+                  type="text"
+                  placeholder="Subject"
+                  name="subject"
+                  required={true}
+                />
+                <CustomTextArea
+                  placeholder="Message"
+                  name="message"
+                  required={true}
+                />
+                <Button type="submit" className="w-full">Submit</Button>
+              </form>
+            </Form>
           </div>
         </div>
         {corners.map((item, index) => (

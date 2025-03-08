@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { sora } from "./font";
+import { Toaster } from 'sonner';
 
 
 export const metadata: Metadata = {
@@ -18,6 +19,7 @@ export default function RootLayout({
       <body
         className={`${sora.className} antialiased` }
       >
+        <Toaster />
        {children}
       </body>
     </html>

@@ -7,29 +7,31 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import { FieldValues, UseFormReturn } from 'react-hook-form';
 import { Textarea } from '@/components/ui/textarea';
+import { useFormContext } from 'react-hook-form';
 
 interface CustomTextAreaProps {
-  label: string;
-  placeholder: string;
+  label?: string;
+  placeholder?: string;
   description?: string;
   name: string;
-  form: UseFormReturn<FieldValues>;
+  required?:boolean
 }
 
-const CustomTextArea: React.FC<CustomTextAreaProps> = ({ label, placeholder, description, name, form }) => {
+const CustomTextArea: React.FC<CustomTextAreaProps> = ({ label, placeholder, description, name, required }) => {
+  const { control } = useFormContext();
+
   return (
     <FormField
-      control={form.control}
+      control={control}
       name={name}
       render={({ field }) => (
         <FormItem className='space-y-2'>
           <FormLabel className="text-black">{label}</FormLabel>
           <FormControl>
-            <Textarea placeholder={placeholder} {...field} className="px-0  border-primary  border-none border-b-2 rounded-none"/>
+            <Textarea placeholder={placeholder} {...field} required={required} className="px-1 text-black border-1 border-primary focus:outline-none rounded focus:ring-0 focus:border-none"/>
           </FormControl>
-          {description && <FormDescription>{description}</FormDescription>}
+          {description && <FormDescription className="text-xs">{description}</FormDescription>}
           <FormMessage />
         </FormItem>
       )}
