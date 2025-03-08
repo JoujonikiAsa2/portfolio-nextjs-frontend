@@ -25,9 +25,9 @@ const CustomInput: React.FC<CustomInputProps> = ({ label, placeholder, descripti
       name={name}
       render={({ field }) => (
         <FormItem className='space-y-2'>
-          <FormLabel>{label}</FormLabel>
+          <FormLabel className="text-black">{label}</FormLabel>
           <FormControl>
-            <Input placeholder={placeholder} {...field} className="bg-transparent rounded focus:outline-none"/>
+            <Input placeholder={placeholder} {...field} className="px-0 border-none border-b-2 border-primary focus:outline-none rounded-none focus:ring-0 focus:border-none"/>
           </FormControl>
           {description && <FormDescription>{description}</FormDescription>}
           <FormMessage />

@@ -25,9 +25,9 @@ const CustomTextArea: React.FC<CustomTextAreaProps> = ({ label, placeholder, des
       name={name}
       render={({ field }) => (
         <FormItem className='space-y-2'>
-          <FormLabel>{label}</FormLabel>
+          <FormLabel className="text-black">{label}</FormLabel>
           <FormControl>
-            <Textarea placeholder={placeholder} {...field} className="bg-transparent h-32 rounded focus:outline-none"/>
+            <Textarea placeholder={placeholder} {...field} className="px-0  border-primary  border-none border-b-2 rounded-none"/>
           </FormControl>
           {description && <FormDescription>{description}</FormDescription>}
           <FormMessage />
