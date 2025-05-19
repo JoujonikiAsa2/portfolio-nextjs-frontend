@@ -3,6 +3,7 @@ import { useAppSelector } from "@/lib/hook";
 import photo from "@/assets/convocation.png";
 import Image from "next/image";
 import { roboto } from "@/app/font";
+import Particle from "../home/Particle";
 
 type cornerStyle = {
   style: Record<string, unknown>;
@@ -10,7 +11,6 @@ type cornerStyle = {
 };
 const AboutMe = () => {
   const theme = useAppSelector((state) => state.theme.theme);
-  const dots = Array.from({ length: 10 });
   const corners: cornerStyle[] = [
     {
       style: {
@@ -35,22 +35,9 @@ const AboutMe = () => {
       side: "bl",
     },
   ];
-  const predefinedPositions = [
-    "10%",
-    "20%",
-    "30%",
-    "40%",
-    "50%",
-    "60%",
-    "70%",
-    "80%",
-    "90%",
-  ];
   return (
     <div
-      className={`relative  w-full  h-full 2xl:h-screen flex flex-col items-center justify-center px-2 py-28 md:py-6 lg:py-0 md:px-4 lg:px-0 ${
-        theme === "dark" ? "bg-[#0F0715] text-white" : "bg-white"
-      }`}
+      className={`relative  w-full  h-full 2xl:h-screen flex flex-col items-center justify-center px-2 py-28 md:px-4 lg:px-0 ${theme === "dark" ? "dark-background" : "light-background"}`}
     >
       <div className="py-24 lg:py-0 flex flex-col lg:flex-row gap-6 items-center justify-center w-full sm:w-[40rem] md:w-[48rem] lg:w-[64rem] xl:w-[80rem] mx-auto h-full px-4 lg:px-0 gap-4 h-full">
         <div className="h-full w-full flex flex-col-reverse items-center md:flex-row justify-between gap-6 ">
@@ -128,7 +115,7 @@ const AboutMe = () => {
                 alt="Formal Pic"
                 width={300}
                 height={300}
-                className="border h-full"
+                className="h-full"
               />
             </div>
           </div>
@@ -139,31 +126,9 @@ const AboutMe = () => {
               className={`rounded-${item?.side}-full bg-[#8750F7] blur-3xl`}
             ></div>
           ))}
-          {dots.map((dot, index) => {
-            const randomTop =
-              predefinedPositions[
-                Math.floor(Math.random() * predefinedPositions.length)
-              ];
-            const randomLeft =
-              predefinedPositions[
-                Math.floor(Math.random() * predefinedPositions.length)
-              ];
-            return (
-              <div
-                key={index}
-                style={{
-                  width: 10 + Math.floor(Math.random() * 10),
-                  aspectRatio: 1,
-                  position: "absolute",
-                  opacity: 0.2,
-                  top: randomTop,
-                  left: randomLeft,
-                  transition: "all 2s",
-                }}
-                className="rounded-full bg-[#8750F7]  animate-pulse"
-              ></div>
-            );
-          })}
+           <div className="absolute right-0 top-0 h-full z-[2]">
+        <Particle />
+      </div>
         </div>
       </div>
     </div>

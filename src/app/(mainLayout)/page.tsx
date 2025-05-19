@@ -1,7 +1,9 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import type { Metadata } from "next";
 import Banner from "@/components/home/Banner";
 import FeaturedProjects from "@/components/home/FeaturedProjects";
 import Skills from "@/components/home/Skills";
+import BaseContainer from "@/components/shared/BaseContainer";
 
 export const metadata: Metadata = {
   title: "Home | Joujoniki",
@@ -11,9 +13,18 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <div className="">
-      <Banner/>
-      <Skills/>
-      <FeaturedProjects/>
+      <div
+        className="w-full
+               absolute top-0 left-0 "
+      >
+        <Banner />
+        <BaseContainer>
+          <>
+            <Skills />
+            <FeaturedProjects />
+          </>
+        </BaseContainer>
+      </div>
     </div>
   );
 }

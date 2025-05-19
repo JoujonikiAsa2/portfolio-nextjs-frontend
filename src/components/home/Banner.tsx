@@ -9,6 +9,8 @@ import { Button } from "@/components/ui/button";
 import { roboto } from "@/app/font";
 import Link from "next/link";
 
+import Particle from "@/components/home/Particle";
+
 type cornerStyle = {
   style: Record<string, unknown>;
   side: string;
@@ -16,7 +18,7 @@ type cornerStyle = {
 
 const Banner = () => {
   const theme = useAppSelector((state) => state.theme.theme);
-  const dots = Array.from({ length: 10 });
+  // const dots = Array.from({ length: 10 });
   const corners: cornerStyle[] = [
     {
       style: {
@@ -41,23 +43,26 @@ const Banner = () => {
       side: "bl",
     },
   ];
-  const predefinedPositions = [
-    "10%",
-    "20%",
-    "30%",
-    "40%",
-    "50%",
-    "60%",
-    "70%",
-    "80%",
-    "90%",
-  ];
+  // const predefinedPositions = [
+  //   "10%",
+  //   "20%",
+  //   "30%",
+  //   "40%",
+  //   "50%",
+  //   "60%",
+  //   "70%",
+  //   "80%",
+  //   "90%",
+  // ];
   return (
     <div
-      className={`relative  w-full  h-[800px] md:h-[600px] lg:h-[600px] xl:h-[800px] 2xl:h-[900px] ${
-        theme === "dark" ? "bg-[#0F0715] text-white" : "bg-white"
+      className={`relative  w-full  h-[900px] xs:h-[800px] md:h-[600px] lg:h-[600px] xl:h-[800px] 2xl:h-[900px] 
+        ${theme === "dark" ? "dark-background" : "light-background"}
       }`}
     >
+      <div className="absolute right-0 top-0 h-full z-[2]">
+        <Particle />
+      </div>
       <div className="flex flex-col-reverse md:flex-row items-center justify-center w-full sm:w-[40rem] md:w-[48rem] lg:w-[64rem] xl:w-[80rem] mx-auto h-full px-4 lg:px-0 gap-4">
         <div className="space-y-4 h-[250px] w-full md:w-1/2">
           <h5 className="text-xl font-bold uppercase">
@@ -101,7 +106,7 @@ const Banner = () => {
           <div className="py-4">
             <Link href="/resume.pdf" rel="noopener noreferrer">
               <Button
-                className={`bg-transparent border-2 border-[#8750F7] w-fit sm:w-56 ${
+                className={`bg-transparent border border-[#8750F7] w-fit sm:w-56 ${
                   theme === "dark" ? "text-white" : "text-black"
                 }`}
               >
@@ -113,15 +118,14 @@ const Banner = () => {
             </Link>
           </div>
         </div>
-        <div className="py-24 relative w-full md:w-1/2 flex justify-center md:justify-end">
-        <div
-            className="absolute w-[15rem] h-[15rem] lg:w-[24rem] lg:h-[24rem] rounded-2xl bg-gradient-to-r from-purple-500 to-[#864FF4] border-4 border-[#8750F7] transition-all duration-3000 opacity-60"></div>
+        <div className="py-12 xs:py-24 relative w-full md:w-1/2 flex justify-center md:justify-end z-20">
+          <div className={`absolute w-[15rem] h-[15rem] lg:w-[24rem] lg:h-[24rem] rounded-2xl border border-[#8750F7] transition-all duration-3000 opacity-60 ${theme === "dark" ? " dark-background ": "light-background"}`}></div>
           <Image
             src={formal}
             alt="Formal Pic"
             width={300}
             height={300}
-            className=" w-[15rem] h-[15rem] lg:w-[24rem] lg:h-[24rem] object-cover rounded-2xl border-4 border-[#8750F7] -translate-x-6 translate-y-6 md:-translate-x-10 md:translate-y-10"
+            className=" w-[15rem] h-[15rem] lg:w-[24rem] lg:h-[24rem] object-cover rounded-2xl -translate-x-6 translate-y-6 md:-translate-x-10 md:translate-y-10"
           />
         </div>
         {corners.map((item, index) => (
@@ -131,7 +135,7 @@ const Banner = () => {
             className={`rounded-${item?.side}-full bg-[#8750F7] blur-3xl`}
           ></div>
         ))}
-        {dots.map((dot, index) => {
+        {/* {dots.map((dot, index) => {
           const randomTop =
             predefinedPositions[
               Math.floor(Math.random() * predefinedPositions.length)
@@ -155,7 +159,7 @@ const Banner = () => {
               className="rounded-full bg-[#8750F7]  animate-pulse"
             ></div>
           );
-        })}
+        })} */}
       </div>
     </div>
   );

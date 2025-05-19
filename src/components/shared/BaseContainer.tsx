@@ -1,10 +1,10 @@
 "use client";
 import React from "react";
 import { useAppSelector } from "@/lib/hook";
-const LightContainer = ({ children }: { children: React.ReactElement }) => {
+const BaseContainer = ({ children }: { children: React.ReactElement }) => {
   const theme = useAppSelector((state) => state.theme.theme);
   return (
-    <div className={`h-full py-24 px-2 lg:px-0 w-full flex gap-6 items-center justify-center ${
+    <div className={`h-full py-20 px-2 lg:px-0 w-full flex gap-6 items-center justify-center relative ${
         theme === "dark"
           ? "bg-[#050709] text-white"
           : "bg-[#F6F3FC] text-black"
@@ -22,4 +22,4 @@ const LightContainer = ({ children }: { children: React.ReactElement }) => {
   );
 };
 
-export default LightContainer;
+export default BaseContainer;

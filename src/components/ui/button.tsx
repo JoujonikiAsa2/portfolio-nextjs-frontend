@@ -10,7 +10,7 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          `bg-gradient-to-r from-purple-500 to-[#864FF4] text-white font-normal py-2 px-6 rounded-full shadow-md hover:bg-gradient-to-l from-purple-500 to-gray-900 transition-all ${roboto.className}`,
+          `bg-[#8750F7] text-white font-normal py-2 px-6 rounded-full shadow-md hover:bg-[#8750F7]/50 transition-all ${roboto.className}`,
         destructive:
           "bg-destructive text-white shadow-xs hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40",
         outline:
