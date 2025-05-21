@@ -1,5 +1,5 @@
 "use client";
-import { LogIn, LucideLightbulb, Menu, Moon } from "lucide-react";
+import { LucideLightbulb, Menu, Moon } from "lucide-react";
 import React, { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { setTheme } from "@/lib/theme/themeSlice";
@@ -58,7 +58,7 @@ const Navbar = () => {
             <ul className={`navbar-links ${roboto.className} font-normal ${ theme === "dark" ? "text-[#dddddd]" : "text-black"}`}>
               <Link href="/"><li className="hover:cursor-pointer">Home</li></Link>
               <Link href="/about"><li className="hover:cursor-pointer">About</li></Link>
-              <Link href="/projects"><li className="hover:cursor-pointer">Projects</li></Link>
+              <Link href="/project"><li className="hover:cursor-pointer">Projects</li></Link>
               <Link href="/blog"><li className="hover:cursor-pointer">Blog</li></Link>
               <Link href='/contact'><li className="hover:cursor-pointer">Contact</li></Link>
             </ul>
@@ -70,7 +70,7 @@ const Navbar = () => {
                 target="_blank"
               >
                 <Button
-                  className={`bg-white text-black hover:text-white ${
+                  className={`bg-white text-black hover:text-black ${
                     theme === "dark" ? "" : "border border-gray-200"
                   }`}
                 >
@@ -79,7 +79,7 @@ const Navbar = () => {
               </Link>
               <Link href={"https://github.com/JoujonikiAsa2"} target="_blank">
                 <Button
-                  className={`bg-white text-black hover:text-white ${
+                  className={`bg-white text-black  hover:text-black ${
                     theme === "dark" ? "" : "border border-gray-200"
                   }`}
                 >
@@ -113,11 +113,6 @@ const Navbar = () => {
                     <LucideLightbulb />
                   </Button>
                 )}
-              </div>
-              <div className="login-button">
-                <Button>
-                  Login <LogIn />
-                </Button>
               </div>
             </div>
           </div>

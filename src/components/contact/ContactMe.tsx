@@ -14,7 +14,6 @@ type cornerStyle = {
 };
 
 const ContactMe = () => {
-
   const theme = useAppSelector((state) => state.theme.theme);
   const corners: cornerStyle[] = [
     {
@@ -43,7 +42,7 @@ const ContactMe = () => {
   return (
     <div
       className={`relative w-full h-full 2xl:h-screen flex flex-col items-center justify-center px-2 py-28 md:px-4 lg:px-0 ${
-        theme === "dark" ?  "dark-background text-white" : "light-background"
+        theme === "dark" ? "dark-background text-white" : "light-background"
       }`}
     >
       <div className="z-20  flex flex-col lg:flex-row gap-6 items-center justify-center w-full sm:w-[40rem] md:w-[48rem] lg:w-[64rem] xl:w-[80rem] mx-auto h-full">
@@ -54,9 +53,7 @@ const ContactMe = () => {
         >
           <div className="lg:w-[40%] relative w-full lg:flex-1 flex flex-col justify-between">
             <div className="rounded-2xl mb-6 lg:mb-0 flex flex-col gap-4 ">
-              
-              <div className="flex items-center space-x-4">
-              </div>
+              <div className="flex items-center space-x-4"></div>
               <div className="flex items-center space-x-4">
                 <Button>
                   <Phone />
@@ -79,16 +76,14 @@ const ContactMe = () => {
               </div>
             </div>
 
-            <div className="flex gap-2">
+            <div className="flex gap-2 z-30">
               <Link
                 href={"https://www.linkedin.com/in/joujonikiasaroy/"}
                 target="_blank"
               >
                 <Button
-                  className={`hover:cursor-pointer ${
-                    theme === "dark"
-                      ? "light-background text-black"
-                      : "dark-background text-white"
+                  className={`bg-white text-black hover:text-black ${
+                    theme === "dark" ? "" : "border border-gray-200"
                   }`}
                 >
                   <TiSocialLinkedin />
@@ -96,10 +91,8 @@ const ContactMe = () => {
               </Link>
               <Link href={"https://github.com/JoujonikiAsa2"} target="_blank">
                 <Button
-                  className={`hover:cursor-pointer ${
-                    theme === "dark"
-                      ? "light-background text-black"
-                      : "dark-background text-white"
+                  className={`bg-white text-black  hover:text-black ${
+                    theme === "dark" ? "" : "border border-gray-200"
                   }`}
                 >
                   <FiGithub />
@@ -124,13 +117,11 @@ const ContactMe = () => {
             }`}
           >
             <div className="text-2xl font-bold text-center">
-              <h1
-                className={`text-transparent bg-clip-text bg-[#8750F7]`}
-              >
+              <h1 className={`text-transparent bg-clip-text bg-[#8750F7]`}>
                 Get in Touch
               </h1>
             </div>
-            <ContactForm/>
+            <ContactForm />
           </div>
         </div>
         {corners.map((item, index) => (

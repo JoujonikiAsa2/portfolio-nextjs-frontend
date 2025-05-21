@@ -3,6 +3,7 @@ import dynamic from 'next/dynamic';
 import BaseContainer from "@/components/shared/BaseContainer";
 import ClientOnly from "@/components/ClientOnly";
 import ContactMeHome from "@/components/contact/ContactMeHome";
+import Footer from "@/components/shared/Footer";
 // Dynamically import components that might use browser APIs
 const Banner = dynamic(() => import("@/components/home/Banner"), { ssr: true });
 const Skills = dynamic(() => import("@/components/home/Skills"), { ssr: true });
@@ -24,6 +25,7 @@ export default function Home() {
               <Skills />
               <FeaturedProjects />
               <ContactMeHome/>
+              <Footer/>
             </>
           </BaseContainer>
         </div>

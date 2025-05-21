@@ -1,9 +1,8 @@
 import { notFound } from "next/navigation";
-import { TBlog } from "@/types/blog";
 import ProjectDetails from "@/components/project/ProjectDetails";
 import { TProject } from "@/types/projects";
 
-async function getProjectById(id: string): Promise<TBlog | null> {
+async function getProjectById(id: string): Promise<TProject | null> {
   try {
     const res = await fetch(
       `https://portfolio-nextjs-backend-rho.vercel.app/api/v1/project/${id}`,
@@ -33,7 +32,7 @@ export default async function BlogPage({ params }: { params: { id: string } }) {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center w-full h-full p-4 bg-gray-200">
+    <div className="flex flex-col items-center justify-center w-full h-full">
       <ProjectDetails project={project} />
     </div>
   );

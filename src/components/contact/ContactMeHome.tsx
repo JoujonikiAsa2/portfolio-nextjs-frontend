@@ -79,16 +79,14 @@ const ContactMeHome = () => {
               </div>
             </div>
 
-            <div className="flex gap-2">
+            <div className="flex gap-2 z-30">
               <Link
                 href={"https://www.linkedin.com/in/joujonikiasaroy/"}
                 target="_blank"
               >
                 <Button
-                  className={`hover:cursor-pointer ${
-                    theme === "dark"
-                      ? "light-background text-black"
-                      : "dark-background text-white"
+                  className={`bg-white text-black hover:text-black ${
+                    theme === "dark" ? "" : "border border-gray-200"
                   }`}
                 >
                   <TiSocialLinkedin />
@@ -96,10 +94,8 @@ const ContactMeHome = () => {
               </Link>
               <Link href={"https://github.com/JoujonikiAsa2"} target="_blank">
                 <Button
-                  className={`hover:cursor-pointer ${
-                    theme === "dark"
-                      ? "light-background text-black"
-                      : "dark-background text-white"
+                  className={`bg-white text-black  hover:text-black ${
+                    theme === "dark" ? "" : "border border-gray-200"
                   }`}
                 >
                   <FiGithub />

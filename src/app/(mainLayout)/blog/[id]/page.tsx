@@ -34,7 +34,7 @@ export default async function BlogPage({ params }: { params: { id: string } }) {
   console.log(blog)
 
   return (
-    <div className="flex flex-col items-center justify-center w-full h-full p-4 bg-gray-200">
+    <div className="flex flex-col items-center justify-center w-full h-full ">
       <BlogDetail blog={blog} />
     </div>
   );

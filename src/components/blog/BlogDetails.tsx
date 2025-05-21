@@ -1,15 +1,14 @@
-// components/BlogDetail.tsx
-
+"use client";
 import React from "react";
 import Image from "next/image";
 import { TBlog } from "@/types/blog";
 import { useAppSelector } from "@/lib/hook";
 
 const BlogDetail = ({ blog }: { blog: TBlog | null }) => {
-   const theme = useAppSelector((state) => state.theme.theme);
+  const theme = useAppSelector((state) => state.theme.theme);
   return (
     <div
-      className={`relative w-full h-full 2xl:h-screen flex flex-col items-center justify-center px-2 py-28 md:px-4 ${
+      className={`relative w-full h-full 2xl:h-screen flex flex-col items-center justify-center px-2 py-28 md:px-4 lg:px-0 ${
         theme === "dark" ? "dark-background text-white" : "light-background"
       }`}
     >
