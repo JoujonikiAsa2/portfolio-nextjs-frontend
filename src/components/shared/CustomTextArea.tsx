@@ -20,7 +20,6 @@ interface CustomTextAreaProps {
 
 const CustomTextArea: React.FC<CustomTextAreaProps> = ({ label, placeholder, description, name, required }) => {
   const { control } = useFormContext();
-
   return (
     <FormField
       control={control}
@@ -29,7 +28,7 @@ const CustomTextArea: React.FC<CustomTextAreaProps> = ({ label, placeholder, des
         <FormItem className='space-y-2'>
           <FormLabel className="text-black">{label}</FormLabel>
           <FormControl>
-            <Textarea placeholder={placeholder} {...field} required={required} className="px-1 text-black border-1 border-primary focus:outline-none rounded focus:ring-0 focus:border-none"/>
+            <Textarea placeholder={placeholder} {...field} required={required} className="w-full p-2 text-gray-500 border-1 border-gray-500 focus:outline-none rounded focus:ring-0 focus:border-none"/>
           </FormControl>
           {description && <FormDescription className="text-xs">{description}</FormDescription>}
           <FormMessage />

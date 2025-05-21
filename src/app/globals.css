@@ -123,7 +123,29 @@ body {
   --color-regal-blue: var(--regal-blue); 
 }
 
+.dark-background {
+  background-color: #0F0715;
+}
 
+.light-background {
+  background-color: #FFFFFF;
+}
+
+.light-text-color{
+  color: #000000
+}
+
+.dark-text-color{
+  color:#FFFFFF
+}
+
+.dark-card{
+  background-color: #140B1D
+}
+
+.light-card{
+  background-color: #FFFFFF
+}
 
 
 /* loader */

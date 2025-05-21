@@ -1,7 +1,13 @@
 import type { Metadata } from "next";
-import Banner from "@/components/home/Banner";
-import FeaturedProjects from "@/components/home/FeaturedProjects";
-import Skills from "@/components/home/Skills";
+import dynamic from 'next/dynamic';
+import BaseContainer from "@/components/shared/BaseContainer";
+import ClientOnly from "@/components/ClientOnly";
+import ContactMeHome from "@/components/contact/ContactMeHome";
+import Footer from "@/components/shared/Footer";
+// Dynamically import components that might use browser APIs
+const Banner = dynamic(() => import("@/components/home/Banner"), { ssr: true });
+const Skills = dynamic(() => import("@/components/home/Skills"), { ssr: true });
+const FeaturedProjects = dynamic(() => import("@/components/home/FeaturedProjects"), { ssr: true });
 
 export const metadata: Metadata = {
   title: "Home | Joujoniki",
@@ -10,10 +16,20 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <div className="">
-      <Banner/>
-      <Skills/>
-      <FeaturedProjects/>
-    </div>
+    <ClientOnly>
+      <div className="">
+        <div className="w-full absolute top-0 left-0">
+          <Banner />
+          <BaseContainer>
+            <>
+              <Skills />
+              <FeaturedProjects />
+              <ContactMeHome/>
+              <Footer/>
+            </>
+          </BaseContainer>
+        </div>
+      </div>
+    </ClientOnly>
   );
 }
