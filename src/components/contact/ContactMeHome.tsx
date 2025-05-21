@@ -7,14 +7,14 @@ import { FiGithub } from "react-icons/fi";
 import { Button } from "@/components/ui/button";
 import Particle from "../home/Particle";
 import ContactForm from "./ContactForm";
+import SectionTitle from "../shared/SectionTitle";
 
 type cornerStyle = {
   style: Record<string, unknown>;
   side: string;
 };
 
-const ContactMe = () => {
-
+const ContactMeHome = () => {
   const theme = useAppSelector((state) => state.theme.theme);
   const corners: cornerStyle[] = [
     {
@@ -42,11 +42,13 @@ const ContactMe = () => {
   ];
   return (
     <div
-      className={`relative w-full h-full 2xl:h-screen flex flex-col items-center justify-center px-2 py-28 md:px-4 lg:px-0 ${
-        theme === "dark" ?  "dark-background text-white" : "light-background"
-      }`}
+      className={`relative w-full h-full 2xl:h-screen flex flex-col items-center justify-center px-2 py-28 md:px-4 lg:px-0 bg-transparent`}
     >
-      <div className="z-20  flex flex-col lg:flex-row gap-6 items-center justify-center w-full sm:w-[40rem] md:w-[48rem] lg:w-[64rem] xl:w-[80rem] mx-auto h-full">
+      {" "}
+      <div className="w-full pb-10 flex justify-start">
+        <SectionTitle title="Contact Me" subTitle="" />
+      </div>
+      <div className={`z-20  flex flex-col lg:flex-row gap-6 items-center justify-center w-full sm:w-[40rem] md:w-[48rem] lg:w-[64rem] xl:w-[80rem] mx-auto h-full border`}>
         <div
           className={`p-10 shadow-lg rounded-xl h-full w-full flex flex-col lg:flex-row justify-between gap-8 ${
             theme === "dark" ? "bg-[#050709] " : "bg-[#F6F3FC]"
@@ -54,9 +56,7 @@ const ContactMe = () => {
         >
           <div className="lg:w-[40%] relative w-full lg:flex-1 flex flex-col justify-between">
             <div className="rounded-2xl mb-6 lg:mb-0 flex flex-col gap-4 ">
-              
-              <div className="flex items-center space-x-4">
-              </div>
+              <div className="flex items-center space-x-4"></div>
               <div className="flex items-center space-x-4">
                 <Button>
                   <Phone />
@@ -124,13 +124,11 @@ const ContactMe = () => {
             }`}
           >
             <div className="text-2xl font-bold text-center">
-              <h1
-                className={`text-transparent bg-clip-text bg-[#8750F7]`}
-              >
+              <h1 className={`text-transparent bg-clip-text bg-[#8750F7]`}>
                 Get in Touch
               </h1>
             </div>
-            <ContactForm/>
+            <ContactForm />
           </div>
         </div>
         {corners.map((item, index) => (
@@ -148,4 +146,4 @@ const ContactMe = () => {
   );
 };
 
-export default ContactMe;
+export default ContactMeHome;

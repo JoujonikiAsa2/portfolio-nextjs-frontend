@@ -1,23 +1,31 @@
 "use client";
 
 import { useCallback } from "react";
-import Particles, { ParticlesProps } from "react-tsparticles";
-import { loadFull } from "tsparticles";
+import dynamic from "next/dynamic";
+import type { ParticlesProps } from "react-tsparticles";
 
 type InitType = ParticlesProps["init"];
 type InitTypeNonNullable = NonNullable<InitType>;
 type InitParameters = Parameters<InitTypeNonNullable>;
 type Engine = InitParameters[0];
 
+// Dynamically import Particles component with SSR disabled
+const ParticlesComponent = dynamic(
+  () => import("react-tsparticles").then((mod) => mod.default),
+  { ssr: false }
+);
+
 const Particle = () => {
   const particlesInit = useCallback(async (engine: Engine) => {
+    // Only import loadFull when the function is called (on client side)
+    const { loadFull } = await import("tsparticles");
     await loadFull(engine);
   }, []);
 
   const particlesLoaded = useCallback(async () => {}, []);
 
   return (
-    <Particles
+    <ParticlesComponent
       className="h-full"
       init={particlesInit}
       loaded={particlesLoaded}
@@ -86,4 +94,9 @@ const Particle = () => {
   );
 };
 
-export default Particle;
+// Create a separate component that will be dynamically imported with SSR disabled
+const ClientSideParticle = () => {
+  return <Particle />;
+};
+
+export default ClientSideParticle;
