@@ -1,6 +1,6 @@
 export type TProject = {
     _id: string;
-  thumbnails: string[];
+  thumbnail: string;
   description: string;
   techStack: string[];
   frontendLivelink: string;

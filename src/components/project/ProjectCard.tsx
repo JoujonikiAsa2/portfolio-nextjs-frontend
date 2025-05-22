@@ -19,7 +19,7 @@ const ProjectCard = ({ project }: { project: TProject }) => {
     >
       <div className="aspect-video relative overflow-hidden">
         <Image
-          src={project.thumbnails[0] || "/placeholder.svg"}
+          src={project?.thumbnail || "https://img.freepik.com/free-vector/illustration-gallery-icon_53876-27002.jpg"}
           alt={"Thumbnail"}
           fill
           className="object-cover transition-transform hover:scale-105"

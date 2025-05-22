@@ -19,16 +19,16 @@ const BlogDetail = ({ blog }: { blog: TBlog | null }) => {
             By {blog?.authorname} | {blog?.publicationdate} | {blog?.category}
           </p>
 
-          {blog?.images.map((src, i) => (
-            <Image
-              key={i}
-              src={src}
-              alt="Blog"
-              width={800}
-              height={400}
-              className="w-full rounded-md"
-            />
-          ))}
+          <Image
+            src={
+              blog?.thumbnail ||
+              "https://img.freepik.com/free-vector/illustration-gallery-icon_53876-27002.jpg"
+            }
+            alt="Blog"
+            width={800}
+            height={400}
+            className="w-full rounded-md"
+          />
 
           {blog?.content ? (
             <div

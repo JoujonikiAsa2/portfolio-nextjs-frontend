@@ -8,7 +8,7 @@ import { useAppSelector } from "@/lib/hook";
 
 const BlogCard = ({ blog }: { blog: TBlog }) => {
   const theme = useAppSelector((state) => state.theme.theme);
-  const { authorname,category, blogtitle, publicationdate, images } = blog;
+  const { authorname,category, blogtitle, publicationdate, thumbnail } = blog;
   return (
     <div
       className={`rounded-xl shadow-md overflow-hidden p-4 space-y-3 mx-w-[300px] border ${
@@ -19,7 +19,7 @@ const BlogCard = ({ blog }: { blog: TBlog }) => {
     >
       <div>
           <Image
-            src={images[0]}
+            src={thumbnail}
             alt={"thumbnail"}
             width={200}
             height={300}

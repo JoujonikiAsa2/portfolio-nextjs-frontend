@@ -5,7 +5,7 @@ export type TBlog = {
   publicationdate: string;
   category: string;
   content: string;
-  images: string[];
+  thumbnail: string;
   createdAt: string;
   updatedAt: string;
 };
