@@ -48,7 +48,7 @@ const Skills = () => {
               >
                 <div className="w-12 h-12 relative">
                   <Image
-                    src={skill.icon}
+                    src={skill.thumbnail}
                     alt={skill.name}
                     fill
                     className="rounded-full object-contain"
