@@ -1,6 +1,13 @@
 import { notFound } from "next/navigation";
 import BlogDetail from "../../../../components/blog/BlogDetails";
 import { TBlog } from "@/types/blog";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Blog | Joujoniki",
+  description: "Personal Portfolio Blog",
+};
+
 
 async function getBlogById(id: string): Promise<TBlog | null> {
   try {

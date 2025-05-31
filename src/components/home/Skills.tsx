@@ -40,18 +40,18 @@ const Skills = () => {
             {technicalSkills?.map((skill: TSkill, index: number) => (
               <div
                 key={index}
-                className={`w-24 h-24 flex flex-col gap-1 items-center justify-center  hover:bg-gradient-to-b from-purple-500 to-gray-900 transition-all rounded-xl ${
-                  theme === "dark"
-                    ? "bg-[#0F0715] border  border-[#8757F7]"
-                    : "bg-[#FFFFFF]"
-                }`}
+                className={` w-24 h-24 flex flex-col gap-1 items-center justify-center transition-all rounded-xl`}
               >
-                <div className="w-12 h-12 relative">
+                <div className={`w-12 h-12 relative rounded-full border ${
+        theme === "dark"
+          ? "border-[#050709] bg-[#F6F3FC]"
+          : "border-[#F6F3FC] bg-[#F6F3FC]"
+                }`}>
                   <Image
                     src={skill.thumbnail}
                     alt={skill.name}
                     fill
-                    className="rounded-full object-contain"
+                    className="rounded-full object-contain p-1"
                   />
                 </div>
                 <p className="text-sm text-center pt-2">{skill.name}</p>

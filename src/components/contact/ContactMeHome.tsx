@@ -48,7 +48,7 @@ const ContactMeHome = () => {
       <div className="w-full pb-10 flex justify-start">
         <SectionTitle title="Contact Me" subTitle="" />
       </div>
-      <div className={`z-20  flex flex-col lg:flex-row gap-6 items-center justify-center w-full sm:w-[40rem] md:w-[48rem] lg:w-[64rem] xl:w-[80rem] mx-auto h-full border`}>
+      <div className={`z-20  flex flex-col lg:flex-row gap-6 items-center justify-center w-full sm:w-[40rem] md:w-[48rem] lg:w-[64rem] xl:w-[80rem] mx-auto h-full`}>
         <div
           className={`p-10 shadow-lg rounded-xl h-full w-full flex flex-col lg:flex-row justify-between gap-8 ${
             theme === "dark" ? "bg-[#050709] " : "bg-[#F6F3FC]"
