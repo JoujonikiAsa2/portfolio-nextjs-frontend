@@ -12,9 +12,9 @@ const SectionTitle = ({
 }) => {
     const theme = useAppSelector((state) => state.theme.theme);
   return (
-    <div  className={`w-full ${theme === "dark" ? "text-white border-b shadow-b-white" : "text-black border-b border-b-[#0F0715]"}`}>
+    <div  className={`w-full flex items-center justify-center ${theme === "dark" ? "text-white" : "text-black"}`}>
       <div
-        className={`text-lg sm:text-xl md:text-3xl font-bold capitalize inline-block text-transparent bg-clip-text  flex items-center justify-center ${
+        className={`text-lg sm:text-xl md:text-3xl font-bold capitalize inline-block text-transparent bg-clip-text ${
           theme === "dark"
             ? "bg-gradient-to-r from-[#8750F7] to-[#DCCCFD]"
             : "bg-gradient-to-r from-[#8750F7] to-[#0F0715]"

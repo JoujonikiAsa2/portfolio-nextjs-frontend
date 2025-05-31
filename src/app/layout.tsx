@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${sora.className} antialiased` }
+        className={`${sora.className} antialiased  min-h-screen` }
       >
         <Toaster />
        {children}
