@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import { useAppSelector } from "@/lib/hook";
 import { Mail, MapPinHouse, Phone } from "lucide-react";
