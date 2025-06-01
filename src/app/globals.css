@@ -4,6 +4,12 @@
 
 @custom-variant dark (&:is(.dark *));
 
+body {
+  background-image: url("data:image/svg+xml,<svg x/mlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(255 255 255 / 0.05)'><path d='M0 .5H31.5V32'/></svg>");
+  background-repeat: repeat;
+  background-size: 32px 32px;
+}
+
 :root {
   --background: #000000;
   --primary: #8D59F8;
@@ -123,7 +129,29 @@ body {
   --color-regal-blue: var(--regal-blue); 
 }
 
+.dark-background {
+  background-color: #0F0715;
+}
 
+.light-background {
+  background-color: #FFFFFF;
+}
+
+.light-text-color{
+  color: #000000
+}
+
+.dark-text-color{
+  color:#FFFFFF
+}
+
+.dark-card{
+  background-color: #140B1D
+}
+
+.light-card{
+  background-color: #FFFFFF
+}
 
 
 /* loader */
