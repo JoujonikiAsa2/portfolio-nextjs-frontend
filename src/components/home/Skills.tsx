@@ -32,21 +32,23 @@ const Skills = () => {
       </div>
       <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-8 rounded-xl">
         <Lottie animationData={skillsAnimation} loop={true} />
-        <div className="w-full  col-span-2 flex flex-col gap-6">
-          <div className="grid grid-cols-3 xs:grid-cols-4 sm:grid-cols-5 md:grid-cols-4 lg:grid-cols-6 2xl:grid-cols-8 gap-2 justify-center items-center rounded-xl">
-            <div className="col-span-8 mb-4">
-              <h3>Technical Skills</h3>
-            </div>
+        <div className="w-full col-span-2 flex flex-col gap-6">
+          <div className="mb-4">
+            <h3>Technical Skills</h3>
+          </div>
+          <div className="flex flex-wrap gap-2  rounded-xl">
             {technicalSkills?.map((skill: TSkill, index: number) => (
               <div
                 key={index}
                 className={` w-24 h-24 flex flex-col gap-1 items-center justify-center transition-all rounded-xl`}
               >
-                <div className={`w-12 h-12 relative rounded-full border ${
-        theme === "dark"
-          ? "border-[#050709] bg-[#F6F3FC]"
-          : "border-[#F6F3FC] bg-[#F6F3FC]"
-                }`}>
+                <div
+                  className={`w-12 h-12 relative rounded-full border ${
+                    theme === "dark"
+                      ? "border-[#050709] bg-[#F6F3FC]"
+                      : "border-[#F6F3FC] bg-[#F6F3FC]"
+                  }`}
+                >
                   <Image
                     src={skill.thumbnail}
                     alt={skill.name}
@@ -66,7 +68,7 @@ const Skills = () => {
               {softSkills?.map((skill: TSkill, index: number) => (
                 <div
                   key={index}
-                  className="w-fit h-12 bg-[#8750F7] text-white flex items-center justify-center rounded px-4"
+                  className="w-fit h-12 bg-[#8750F7]/70 text-white flex items-center justify-center rounded px-4"
                 >
                   {skill.name}
                 </div>

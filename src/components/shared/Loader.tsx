@@ -15,21 +15,13 @@ const Loader = () => {
 
   return (
     <div
-      className={`flex flex-col gap-6 items-center justify-center h-screen relative transition-transform duration-1000 
+      className={`absolute top-0 left-0 w-full h-[100vh] flex flex-col gap-6 items-center justify-center transition-transform duration-1000 
         ${!loading && "-translate-y-full overflow-hidden"}
         ${theme === "dark" ? "dark-background" : "light-background"}
       `}
     >
       {/* loader circle */}
       <div className={`${loading && "loader"}`}></div>
-      
-      {/* loader reveal effect */}
-      <div
-        className={`${
-          !loading &&
-          "light-background w-[120%] h-[100%] rounded-t-full absolute -bottom-72 overflow-x-hidden"
-        }`}
-      ></div>
       
       {/* loader text effect */}
       <div

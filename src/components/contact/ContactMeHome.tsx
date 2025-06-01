@@ -42,19 +42,19 @@ const ContactMeHome = () => {
   ];
   return (
     <div
-      className={`relative w-full h-full 2xl:h-screen flex flex-col items-center justify-center px-2 py-28 md:px-4 lg:px-0 bg-transparent`}
+      className={`relative w-full h-full 2xl:h-screen flex flex-col items-center justify-center px-2 pb-24 md:px-4 lg:px-0 bg-transparent`}
     >
       {" "}
       <div className="w-full pb-10 flex justify-start">
         <SectionTitle title="Contact Me" subTitle="" />
       </div>
-      <div className={`z-20  flex flex-col lg:flex-row gap-6 items-center justify-center w-full sm:w-[40rem] md:w-[48rem] lg:w-[64rem] xl:w-[80rem] mx-auto h-full`}>
+      <div className={`z-20  flex flex-col lg:flex-row gap-6 items-center justify-center w-full sm:w-[40rem] md:w-[48rem] lg:w-[64rem] xl:w-[80rem] h-fit mx-auto`}>
         <div
-          className={`p-10 shadow-lg rounded-xl h-full w-full flex flex-col lg:flex-row justify-between gap-8 ${
+          className={`lg:p-10 shadow-lg rounded-xl h-full w-full flex flex-col lg:flex-row justify-between gap-8 ${
             theme === "dark" ? "bg-[#050709] " : "bg-[#F6F3FC]"
           }`}
         >
-          <div className="lg:w-[40%] relative w-full lg:flex-1 flex flex-col justify-between">
+          <div className="w-full lg:w-[40%] relative lg:flex-1 flex flex-col justify-between p-2">
             <div className="rounded-2xl mb-6 lg:mb-0 flex flex-col gap-4 ">
               <div className="flex items-center space-x-4"></div>
               <div className="flex items-center space-x-4">
@@ -103,10 +103,8 @@ const ContactMeHome = () => {
               </Link>
               <Link href="mailto:joujonikiasaroy.official@gmail.com">
                 <Button
-                  className={`hover:cursor-pointer ${
-                    theme === "dark"
-                      ? "light-background text-black"
-                      : "dark-background text-white"
+                  className={`bg-white text-black  hover:text-black ${
+                    theme === "dark" ? "" : "border border-gray-200"
                   }`}
                 >
                   <Mail />
@@ -115,7 +113,7 @@ const ContactMeHome = () => {
             </div>
           </div>
           <div
-            className={`w-full text-justify lg:w-[40%] h-full p-10 rounded-2xl flex flex-col gap-6 ${
+            className={`w-full h-fit text-justify lg:w-[40%] p-4 lg:p-10 md:rounded-2xl flex flex-col gap-6 ${
               theme === "dark" ? "dark-card" : "light-card"
             }`}
           >

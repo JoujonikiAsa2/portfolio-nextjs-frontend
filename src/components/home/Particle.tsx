@@ -26,7 +26,7 @@ const Particle = () => {
 
   return (
     <ParticlesComponent
-      className="h-full"
+      className="h-full -z-0"
       init={particlesInit}
       loaded={particlesLoaded}
       options={{

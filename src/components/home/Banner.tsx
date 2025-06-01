@@ -6,10 +6,9 @@ import { useAppSelector } from "@/lib/hook";
 import { TypeAnimation } from "react-type-animation";
 import { DownloadIcon } from "lucide-react";
 import { roboto } from "@/app/font";
-import ClientSideParticle from "@/components/home/Particle";
+import Particle from "@/components/home/Particle";
 import useFetch from "@/hooks/useFetch";
 import { getProfile } from "@/services/profile";
-
 type cornerStyle = {
   style: Record<string, unknown>;
   side: string;
@@ -17,6 +16,7 @@ type cornerStyle = {
 
 const Banner = () => {
   const theme = useAppSelector((state) => state.theme.theme);
+
 
   const { response } = useFetch(getProfile);
   const profile = response?.data?.resume;
@@ -48,16 +48,18 @@ const Banner = () => {
       side: "bl",
     },
   ];
+
   return (
     <div
-      className={`z-20 relative  w-full  h-[900px] xs:h-[800px] md:h-[600px] lg:h-[600px] xl:h-[800px] 2xl:h-[900px] 
+      className={`relative  w-full  h-[900px] xs:h-[800px] md:h-[600px] lg:h-[600px] xl:h-[800px] 2xl:h-[900px] 
         ${theme === "dark" ? "dark-background" : "light-background"}
       }`}
     >
-      <div className="absolute right-0 top-0 h-full z-[2]">
-        <ClientSideParticle />
-      </div>
-      <div className="flex flex-col-reverse md:flex-row items-center justify-center w-full sm:w-[40rem] md:w-[48rem] lg:w-[64rem] xl:w-[80rem] mx-auto h-full px-4 lg:px-0 gap-4">
+      <div className="absolute right-0 top-0 h-full z-0 pointer-events-none">
+  <Particle />
+</div>
+
+      <div className="flex flex-col-reverse md:flex-row items-center justify-center w-full sm:w-[40rem] md:w-[48rem] lg:w-[64rem] xl:w-[80rem] mx-auto h-full px-4 lg:px-0 gap-4 z-50">
         <div className="space-y-4 h-[250px] w-full md:w-1/2">
           <h5
             className={`text-xl font-bold uppercase ${
@@ -72,7 +74,7 @@ const Banner = () => {
             Passionate
           </p>
           <div
-            className={`text-justify text-sm sm:text-2xl md:text-3xl lg:text-4xl 2xl:text-4xl font-bold uppercase inline-block text-transparent bg-clip-text  flex items-center ${
+            className={`text-justify text-sm sm:text-2xl md:text-3xl lg:text-4xl 2xl:text-4xl font-bold uppercase  text-transparent bg-clip-text  flex items-center ${
               theme === "dark"
                 ? "bg-gradient-to-r from-[#8750F7] to-[#DCCCFD]"
                 : "bg-gradient-to-r from-[#8750F7] to-[#0F0715]"
@@ -93,7 +95,9 @@ const Banner = () => {
             />
           </div>
           <p
-            className={`text-justify ${roboto.className} font-normal  ${
+            className={`text-base text-justify ${
+              roboto.className
+            } font-normal  ${
               theme === "dark" ? "text-[#dddddd]" : "text-black"
             }`}
           >
@@ -103,7 +107,7 @@ const Banner = () => {
           </p>
           <div className="py-4">
             <button
-              className={`hover:cursor-pointer hover:bg-[#8750F7]/50 bg-transparent border border-[#8750F7] rounded full w-fit sm:w-56 flex gap-2 justify-center items-center p-2 transition-all ${
+  className={` relative hover:cursor-pointer hover:bg-[#8750F7]/50 bg-transparent border border-[#8750F7] rounded w-fit sm:w-56 flex gap-2 justify-center items-center p-2 transition-all ${
                 theme === "dark" ? "text-white" : "text-black"
               }`}
               onClick={() => {
@@ -121,18 +125,16 @@ const Banner = () => {
             </button>
           </div>
         </div>
-        <div className="py-12 xs:py-24 relative w-full md:w-1/2 flex justify-center md:justify-end">
+        <div className="py-12 xs:py-24 relative w-full md:w-1/2 flex justify-center md:justify-end ">
           <div
-            className={`absolute w-[15rem] h-[15rem] lg:w-[24rem] lg:h-[24rem] rounded-2xl border border-[#8750F7] transition-all duration-3000 opacity-60 ${
-              theme === "dark" ? " dark-background " : "light-background"
-            }`}
+            className={`absolute w-[15rem] h-[15rem] lg:w-[24rem] lg:h-[24rem] rounded-2xl bg-[#8750F7]/70 transition-all duration-3000 opacity-60 `}
           ></div>
           <Image
             src={profile?.image || formal}
             alt="Formal Pic"
             width={300}
             height={300}
-            className=" w-[15rem] h-[15rem] lg:w-[24rem] lg:h-[24rem] object-cover border border-[#8750F7] rounded-2xl -translate-x-6 translate-y-6 md:-translate-x-10 md:translate-y-10"
+            className=" w-[15rem] h-[15rem] lg:w-[24rem] lg:h-[24rem] object-cover  rounded-2xl -translate-x-6 translate-y-6 md:-translate-x-10 md:translate-y-10"
           />
         </div>
         {corners.map((item, index) => (

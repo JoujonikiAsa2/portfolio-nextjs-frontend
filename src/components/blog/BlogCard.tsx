@@ -5,17 +5,18 @@ import Link from "next/link";
 import Image from "next/image";
 import { TBlog } from "@/types/blog";
 import { useAppSelector } from "@/lib/hook";
+import { Card, CardContent } from "../ui/card";
+import { Badge } from "../ui/badge";
 
 const BlogCard = ({ blog }: { blog: TBlog }) => {
   const theme = useAppSelector((state) => state.theme.theme);
   const { authorname,category, blogtitle, publicationdate, thumbnail } = blog;
   return (
-    <div
-      className={`rounded-xl shadow-md overflow-hidden p-4 space-y-3 mx-w-[300px] border ${
-        theme === "dark"
-          ? "dark-card dark-text-color"
-          : "light-card light-text-color"
-      }`}
+    <div className=" [perspective:1000px]">
+    <Card
+      className={`hover:scale-110 rounded-xl overflow-hidden p-4 space-y-3 mx-w-[300px] transition-all duration-300 ${
+          theme === "dark" ? "bg-[#050709] border-[0.5px] border-[#2c2c2c] text-white" : "bg-[#F6F3FC] border-[0.5px] border-[#cecbcb] text-black"
+        }`}
     >
       <div>
           <Image
@@ -26,8 +27,8 @@ const BlogCard = ({ blog }: { blog: TBlog }) => {
             className="rounded-md w-full h-36 object-cover"
           />
       </div>
-      <div className="space-y-1">
-        <p className="text-sm text-purple-400">{category}</p>
+      <CardContent className="space-y-1">
+        <Badge className="text-sm">{category}</Badge>
         <h2 className="text-lg font-bold">{blogtitle}</h2>
         <p className="text-sm text-gray-400">
           By {authorname} on {publicationdate}
@@ -37,7 +38,8 @@ const BlogCard = ({ blog }: { blog: TBlog }) => {
             Read More
           </p>
         </Link>
-      </div>
+      </CardContent>
+    </Card>
     </div>
   );
 };

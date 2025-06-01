@@ -19,7 +19,7 @@ const FeaturedProjects = () => {
       <div className="w-full pb-10 flex justify-start">
         <SectionTitle title="Featured Projects" subTitle="" />
       </div>
-      <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 justify-between">
+      <div className="w-full grid grid-cols-1 lg:grid-cols-3 gap-8 justify-between">
         {projects?.slice(0,3).map((project: TProject, index: number) => (
           <ProjectCard key={index} project={project}/>
         ))}

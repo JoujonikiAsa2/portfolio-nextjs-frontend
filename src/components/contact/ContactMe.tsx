@@ -45,9 +45,9 @@ const ContactMe = () => {
         theme === "dark" ? "dark-background text-white" : "light-background"
       }`}
     >
-      <div className="z-20  flex flex-col lg:flex-row gap-6 items-center justify-center w-full sm:w-[40rem] md:w-[48rem] lg:w-[64rem] xl:w-[80rem] mx-auto h-full">
+      <div className="z-20  flex flex-col lg:flex-row gap-6 items-center justify-center w-full sm:w-[40rem] md:w-[44rem] lg:w-[64rem] xl:w-[80rem] mx-auto h-full">
         <div
-          className={`p-10 shadow-lg rounded-xl h-full w-full flex flex-col lg:flex-row justify-between gap-8 ${
+          className={`p-2 lg:p-10 shadow-lg rounded-xl h-full w-full flex flex-col lg:flex-row justify-between gap-8 ${
             theme === "dark" ? "bg-[#050709] " : "bg-[#F6F3FC]"
           }`}
         >
@@ -100,10 +100,8 @@ const ContactMe = () => {
               </Link>
               <Link href="mailto:joujonikiasaroy.official@gmail.com">
                 <Button
-                  className={`hover:cursor-pointer ${
-                    theme === "dark"
-                      ? "light-background text-black"
-                      : "dark-background text-white"
+                  className={`bg-white text-black  hover:text-black ${
+                    theme === "dark" ? "" : "border border-gray-200"
                   }`}
                 >
                   <Mail />
@@ -112,7 +110,7 @@ const ContactMe = () => {
             </div>
           </div>
           <div
-            className={`w-full text-justify lg:w-[40%] h-full p-10 rounded-2xl flex flex-col gap-6 ${
+            className={`w-full text-justify lg:w-[40%] h-full p-4 lg:p-10 md:rounded-2xl flex flex-col gap-6 ${
               theme === "dark" ? "dark-card" : "light-card"
             }`}
           >

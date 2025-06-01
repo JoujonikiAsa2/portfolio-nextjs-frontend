@@ -7,7 +7,6 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import { Textarea } from '@/components/ui/textarea';
 import { useFormContext } from 'react-hook-form';
 
 interface CustomTextAreaProps {
@@ -28,7 +27,7 @@ const CustomTextArea: React.FC<CustomTextAreaProps> = ({ label, placeholder, des
         <FormItem className='space-y-2'>
           <FormLabel className="text-black">{label}</FormLabel>
           <FormControl>
-            <Textarea placeholder={placeholder} {...field} required={required} className="w-full p-2 text-gray-500 border-1 border-gray-500 focus:outline-none rounded focus:ring-0 focus:border-none"/>
+            <textarea placeholder={placeholder} {...field} required={required} className="w-full p-2 text-gray-500 border-1 border-gray-500 focus:outline-none rounded focus:ring-0 focus:border-none"/>
           </FormControl>
           {description && <FormDescription className="text-xs">{description}</FormDescription>}
           <FormMessage />

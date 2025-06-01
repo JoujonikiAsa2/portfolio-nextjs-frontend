@@ -7,7 +7,6 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { useFormContext } from "react-hook-form";
-import { Input } from "../ui/input";
 
 type CustomInputProps = {
   label?: string;
@@ -34,12 +33,12 @@ const CustomInput = ({
         <FormItem className="space-y-1">
           {label && <FormLabel className="text-black">{label}</FormLabel>}
           <FormControl>
-            <Input
+            <input
             type={type}
             required={required}
               placeholder={placeholder}
               {...field}
-              className="p-2 text-gray-500 border-t-none border-r-none border-b-[1px] focus:outline-none focus:ring-0 focus:border-b-[1px]"
+              className="w-fulll p-2 text-gray-500 border-t-none border-r-none border-b-[1px] focus:outline-none focus:ring-0 focus:border-b-[1px]"
             />
           </FormControl>
           <FormMessage />
