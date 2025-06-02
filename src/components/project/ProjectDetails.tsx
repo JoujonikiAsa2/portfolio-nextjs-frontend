@@ -43,13 +43,14 @@ const ProjectDetails = ({ project }: { project: TProject | null }) => {
                   <h1 className="text-3xl lg:text-4xl font-bold mb-4">
                     {project?.title}
                   </h1>
-                  <p
+                  <div
                     className={`text-base text-justify leading-6 ${
                       theme === "dark" ? "text-[#dddddd]" : "text-black"
                     } mb-6 max-w-3xl`}
-                  >
-                    {project?.description}
-                  </p>
+                    dangerouslySetInnerHTML={{
+                      __html: project?.description || "",
+                    }}
+                  />
                   <div className="flex flex-wrap gap-2 mb-6">
                     {project?.techStack.map((tech) => (
                       <Badge
@@ -132,9 +133,8 @@ const ProjectDetails = ({ project }: { project: TProject | null }) => {
                               : "text-muted-foreground"
                           }
                         >
-                          Duration:
+                          Duration: {project?.duration}
                         </span>
-                        <span>{project?.duration}</span>
                       </div>
                       <div className="flex items-center gap-2">
                         <Users
@@ -151,9 +151,8 @@ const ProjectDetails = ({ project }: { project: TProject | null }) => {
                               : "text-muted-foreground"
                           }
                         >
-                          Team:
+                          Team: {project?.team}
                         </span>
-                        <span>{project?.team}</span>
                       </div>
 
                       <div className="flex items-center gap-2">
@@ -173,9 +172,8 @@ const ProjectDetails = ({ project }: { project: TProject | null }) => {
                               : "text-muted-foreground"
                           }
                         >
-                          Category:
+                          Category: {project?.category}
                         </span>
-                        <span>{project?.category}</span>
                       </div>
                       <div className="flex items-center gap-2">
                         <span
@@ -226,15 +224,15 @@ const ProjectDetails = ({ project }: { project: TProject | null }) => {
                 {project?.features && project.features.length > 0 && (
                   <div>
                     <h2 className="text-2xl font-bold mb-4">Key Features</h2>
-                    <div className="grid sm:grid-cols-2 gap-3">
+                    <div className="grid gap-3 text-gray-400">
                       {project.features.map((feature, index) => (
                         <div key={index} className="flex items-start gap-2">
                           <span
                             className={`w-2 h-2 ${
-                              theme === "dark" ? "bg-teal-500" : "bg-primary"
+                              theme === "dark" ? "bg-purple-500" : "bg-primary"
                             } rounded-full mt-2 flex-shrink-0`}
                           />
-                          <span className="text-sm">{feature}</span>
+                          <span className="text-base">{feature}</span>
                         </div>
                       ))}
                     </div>
@@ -246,12 +244,15 @@ const ProjectDetails = ({ project }: { project: TProject | null }) => {
                     <h2 className="text-2xl font-bold mb-4">
                       Challenges & Solutions
                     </h2>
-                    <div className="space-y-6">
+                    <div className="grid gap-3 text-gray-400">
                       {project.challenges.map((challenge, index) => (
                         <div key={index}>
-                          <h3 className="text-lg font-semibold mb-2">
-                            {challenge}
-                          </h3>
+                          <span
+                            className={`w-2 h-2 ${
+                              theme === "dark" ? "bg-purple-500" : "bg-primary"
+                            } rounded-full mt-2 flex-shrink-0`}
+                          />
+                          <span className="text-base">{challenge}</span>
                         </div>
                       ))}
                     </div>
@@ -331,10 +332,7 @@ const ProjectDetails = ({ project }: { project: TProject | null }) => {
                       {"Let's discuss how I can help with your next project."}
                     </p>
                     <Link href="/contact">
-                      <Button
-                      >
-                        Get In Touch
-                      </Button>
+                      <Button>Get In Touch</Button>
                     </Link>
                   </CardContent>
                 </Card>

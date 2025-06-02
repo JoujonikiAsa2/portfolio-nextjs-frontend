@@ -7,6 +7,7 @@ import { TProject } from "@/types/projects";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { CiLocationArrow1 } from "react-icons/ci";
 import { FiGithub } from "react-icons/fi";
+import { Button } from "../ui/button";
 
 const ProjectCard = ({ project }: { project: TProject }) => {
   const theme = useAppSelector((state) => state.theme.theme);
@@ -15,7 +16,9 @@ const ProjectCard = ({ project }: { project: TProject }) => {
     <div className=" [perspective:1000px]">
       <Card
         className={`group p-4 duration-500 hover:[transform:rotateX(32deg)] relative overflow-hidden rounded-xl ${
-          theme === "dark" ? "bg-[#050709] border-[0.5px] border-[#2c2c2c] text-white" : "bg-[#F6F3FC] border-[0.5px] border-[#cecbcb] text-black"
+          theme === "dark"
+            ? "bg-[#050709] border-[0.5px] border-[#2c2c2c] text-white"
+            : "bg-[#F6F3FC] border-[0.5px] border-[#cecbcb] text-black"
         }  transition-all`}
       >
         <div className="">
@@ -32,29 +35,20 @@ const ProjectCard = ({ project }: { project: TProject }) => {
             />
           </div>
           <CardContent className="space-y-4 px-0 pt-4">
-            <p className="text-muted-foreground line-clamp-3">
-              {project.description}
-            </p>
+            <div
+              className="text-muted-foreground line-clamp-3"
+              dangerouslySetInnerHTML={{ __html: project?.description || "" }}
+            />
             <Link href={`project/${project?._id}`}>
               <div className="pb-4 text-[#8750F7]">Read More</div>
             </Link>
-            <div className="flex justify-start items-center relative pb-4">
-              {project.techStack.map((tech, index) => (
+            <div className="flex flex-wrap justify-start items-center relative pb-4">
+              {project?.techStack?.slice(0,6)?.map((tech, index) => (
                 <div
                   key={`${tech}-${index}`}
-                  className={`mb-2 border border-white/[0.2] rounded-full lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center hover:z-10
-        ${index !== 0 ? "-ml-4" : ""} `}
+                  className={`mb-2  flex justify-center items-center gap-1`}
                 >
-                  <Image
-                    src={
-                      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHR_P-7OxbDx2-EpUFbKc24Ee2jKJYms_gUw&s"
-                    }
-                    alt={"Thumbnail"}
-                    width={24}
-                    height={24}
-                    className="w-full h-full object-cover transition-transform rounded-full p-[1px] border border-[#8757F7]"
-                    priority
-                  />
+                  <Button className=" w-fit h-6 mr-1">{tech}</Button>
                 </div>
               ))}
             </div>
@@ -71,7 +65,11 @@ const ProjectCard = ({ project }: { project: TProject }) => {
                     }`}
                   >
                     <p>Live</p>
-                    <CiLocationArrow1 className={`${theme === "dark" ? "text-white" : "text-[#8757F7]"}`} />
+                    <CiLocationArrow1
+                      className={`${
+                        theme === "dark" ? "text-white" : "text-[#8757F7]"
+                      }`}
+                    />
                   </div>
                 </Link>
               ) : null}
@@ -85,7 +83,11 @@ const ProjectCard = ({ project }: { project: TProject }) => {
                     }`}
                   >
                     <p>Check live</p>
-                    <CiLocationArrow1 className={`${theme === "dark" ? "text-white" : "text-[#8757F7]"}`} />
+                    <CiLocationArrow1
+                      className={`${
+                        theme === "dark" ? "text-white" : "text-[#8757F7]"
+                      }`}
+                    />
                   </div>
                 </Link>
               ) : null}

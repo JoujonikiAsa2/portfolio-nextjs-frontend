@@ -7,9 +7,10 @@ import useFetch from "@/hooks/useFetch";
 import { getProjects } from "@/services/project";
 import { TProject } from "@/types/projects";
 import ProjectCard from "../project/ProjectCard";
+import { Button } from "../ui/button";
+import Link from "next/link";
 
 const FeaturedProjects = () => {
-
   const { response } = useFetch(getProjects);
   const projects = response?.data;
   return (
@@ -20,9 +21,14 @@ const FeaturedProjects = () => {
         <SectionTitle title="Featured Projects" subTitle="" />
       </div>
       <div className="w-full grid grid-cols-1 lg:grid-cols-3 gap-8 justify-between">
-        {projects?.slice(0,3).map((project: TProject, index: number) => (
-          <ProjectCard key={index} project={project}/>
+        {projects?.slice(0, 3).map((project: TProject, index: number) => (
+          <ProjectCard key={index} project={project} />
         ))}
+      </div>
+      <div className="w-full flex justify-center items-center mt-12">
+        <Link href={"/project"}>
+          <Button>See All</Button>
+        </Link>
       </div>
 
       <Image

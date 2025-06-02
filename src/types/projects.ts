@@ -16,5 +16,4 @@ export type TProject = {
   githubFrontend: string;
   githubBackend: string;
   githubFullStack: string;
-  problemFaced: string;
 };
