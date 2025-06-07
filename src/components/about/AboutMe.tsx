@@ -3,38 +3,10 @@ import { useAppSelector } from "@/lib/hook";
 import photo from "@/assets/convocation.png";
 import Image from "next/image";
 import { roboto } from "@/app/font";
-import Particle from "../home/Particle";
 
-type cornerStyle = {
-  style: Record<string, unknown>;
-  side: string;
-};
 const AboutMe = () => {
   const theme = useAppSelector((state) => state.theme.theme);
-  const corners: cornerStyle[] = [
-    {
-      style: {
-        width: 200,
-        height: 200,
-        position: "absolute",
-        opacity: 0.2,
-        bottom: 0,
-        left: 0,
-      },
-      side: "br",
-    },
-    {
-      style: {
-        width: 200,
-        height: 200,
-        position: "absolute",
-        opacity: 0.2,
-        top: 0,
-        right: 0,
-      },
-      side: "bl",
-    },
-  ];
+
   return (
     <div
       className={`relative  w-full  h-full 2xl:h-screen flex flex-col items-center justify-center px-2 py-28 md:px-4 lg:px-0 ${theme === "dark" ? "dark-background" : "light-background"}`}
@@ -119,16 +91,6 @@ const AboutMe = () => {
               />
             </div>
           </div>
-          {corners.map((item, index) => (
-            <div
-              key={index}
-              style={item?.style}
-              className={`rounded-${item?.side}-full blur-3xl`}
-            ></div>
-          ))}
-           <div className="absolute right-0 top-0 h-full z-[2]">
-        <Particle />
-      </div>
         </div>
       </div>
     </div>

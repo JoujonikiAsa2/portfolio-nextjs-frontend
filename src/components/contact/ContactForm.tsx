@@ -5,10 +5,11 @@ import CustomInput from "../shared/CustomInput";
 import CustomTextArea from "../shared/CustomTextArea";
 import { Button } from "../ui/button";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { FieldValues, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { z } from "zod";
 import emailjs from "@emailjs/browser";
 import { toast } from "sonner";
+import { sendMessage } from "@/services/message";
 
 const ContactForm = () => {
   const [isLoading, setIsLoading] = React.useState(false);
@@ -35,16 +36,18 @@ const ContactForm = () => {
     },
   });
 
-  //   console.log(form);
-  console.log(
-    process.env.NEXT_PUBLIC_EMAILJSSERVICEID,
-    process.env.NEXT_PUBLIC_EMAILJSTEMPLATEID,
-    process.env.NEXT_PUBLIC_EMAILJSPUBLICKEY
-  );
+  const sendEmail = async () => {
+    const data = form.getValues();
+    const messageData = {
+      name: data.from_name,
+      phone: data.from_phone,
+      email: data.from_email,
+      subject: data.subject,
+      message: data.message,
+    };
 
-  const sendEmail = async (data: FieldValues) => {
     setIsLoading(true);
-    console.log(data);
+    await sendMessage(messageData);
     emailjs
       .sendForm(
         process.env.NEXT_PUBLIC_EMAILJSSERVICEID as string,
@@ -55,31 +58,37 @@ const ContactForm = () => {
       )
       .then(
         (result) => {
+          console.log(result);
           if (result.status === 200) {
             toast.success("Message Sent!", {
               style: {
-                borderRadius: "8px",
-                background: "#333",
-                color: "#fff",
+                background: "#402254",
+                color: "#FFFFFF",
               },
             });
             setIsLoading(false);
             reset();
           } else {
-            toast.error("Message Failed!", {
+            toast.error("Message sent Failed!", {
               style: {
-                borderRadius: "8px",
-                background: "#333",
-                color: "#fff",
+                background: "#632533",
+                color: "#FFFFFF",
               },
             });
             setIsLoading(false);
-            reset();
+            reset();;
           }
         },
         (error) => {
+          console.error(error);
           setIsLoading(false);
-          toast.error(error);
+          toast.error("Message sent failed", {
+            style: {
+              background: "#632533",
+              color: "#FFFFFF",
+            },
+          });
+          reset();
         }
       );
   };
@@ -91,18 +100,8 @@ const ContactForm = () => {
         onSubmit={handleSubmit(sendEmail)}
         className="space-y-6 text-black"
       >
-        <CustomInput
-          type="text"
-          placeholder="Name"
-          name="from_name"
-          required={true}
-        />
-        <CustomInput
-          type="text"
-          placeholder="Phone"
-          name="from_phone"
-          required={true}
-        />
+        <CustomInput type="text" placeholder="Name" name="from_name" />
+        <CustomInput type="text" placeholder="Phone" name="from_phone" />
         <CustomInput
           type="text"
           placeholder="Email"
@@ -117,7 +116,7 @@ const ContactForm = () => {
         />
         <CustomTextArea placeholder="Message" name="message" required={true} />
         <Button type="submit" className="w-full">
-          {isLoading === true ? <span>Loading...</span> : <span>Submit</span>}
+          {isLoading === true ? <span>Sending...</span> : <span>Send</span>}
         </Button>
       </form>
     </Form>

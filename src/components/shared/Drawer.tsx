@@ -3,7 +3,7 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { useAppDispatch, useAppSelector } from "@/lib/hook";
 import { setMenu } from "@/lib/menu/menuSlice";
-import { LogIn, X } from "lucide-react";
+import { X } from "lucide-react";
 import Link from "next/link";
 import { TiSocialLinkedin } from "react-icons/ti";
 import { FiGithub } from "react-icons/fi";
@@ -52,7 +52,7 @@ const Drawer = () => {
                   About
                 </div>
               </Link>
-              <Link href="/projects">
+              <Link href="/project">
                 <div className="h-12 border-t-1 border-[#7F7F7F] flex items-center hover:cursor-pointer">
                   Projects
                 </div>
@@ -99,12 +99,6 @@ const Drawer = () => {
                         <FiGithub />
                       </Button>
                     </Link>
-                  </div>
-
-                  <div className="">
-                    <Button>
-                      Login <LogIn />
-                    </Button>
                   </div>
                 </div>
               </div>

@@ -5,47 +5,20 @@ import Link from "next/link";
 import { TiSocialLinkedin } from "react-icons/ti";
 import { FiGithub } from "react-icons/fi";
 import { Button } from "@/components/ui/button";
-import Particle from "../home/Particle";
 import ContactForm from "./ContactForm";
-
-type cornerStyle = {
-  style: Record<string, unknown>;
-  side: string;
-};
+import style3 from "@/assets/3.png";
+import Image from "next/image";
 
 const ContactMe = () => {
   const theme = useAppSelector((state) => state.theme.theme);
-  const corners: cornerStyle[] = [
-    {
-      style: {
-        width: 200,
-        height: 200,
-        position: "absolute",
-        opacity: 0.2,
-        bottom: 0,
-        left: 0,
-      },
-      side: "br",
-    },
-    {
-      style: {
-        width: 200,
-        height: 200,
-        position: "absolute",
-        opacity: 0.2,
-        top: 0,
-        right: 0,
-      },
-      side: "bl",
-    },
-  ];
+
   return (
     <div
-      className={`relative w-full h-full 2xl:h-screen flex flex-col items-center justify-center px-2 py-28 md:px-4 lg:px-0 ${
+      className={`w-full h-full 2xl:h-screen flex flex-col items-center justify-center px-2 py-28 md:px-4 lg:px-0 ${
         theme === "dark" ? "dark-background text-white" : "light-background"
       }`}
     >
-      <div className="z-20  flex flex-col lg:flex-row gap-6 items-center justify-center w-full sm:w-[40rem] md:w-[44rem] lg:w-[64rem] xl:w-[80rem] mx-auto h-full">
+      <div className="relative z-20  flex flex-col lg:flex-row gap-6 items-center justify-center w-full sm:w-[40rem] md:w-[44rem] lg:w-[64rem] xl:w-[80rem] mx-auto h-full">
         <div
           className={`p-2 lg:p-10 shadow-lg rounded-xl h-full w-full flex flex-col lg:flex-row justify-between gap-8 ${
             theme === "dark" ? "bg-[#050709] " : "bg-[#F6F3FC]"
@@ -122,16 +95,13 @@ const ContactMe = () => {
             <ContactForm />
           </div>
         </div>
-        {corners.map((item, index) => (
-          <div
-            key={index}
-            style={item?.style}
-            className={`rounded-${item?.side}-full bg-[#8750F7] blur-3xl`}
-          ></div>
-        ))}
-      </div>
-      <div className="absolute right-0 top-0 h-full z-[2]">
-        <Particle />
+        <Image
+          src={style3}
+          alt="style"
+          width={100}
+          height={200}
+          className="absolute left-0 opacity-70 w-[10rem] h-[12rem] lg:w-[25rem] lg:h-[15rem] object-contain"
+        />
       </div>
     </div>
   );

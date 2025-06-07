@@ -5,41 +5,15 @@ import Link from "next/link";
 import { TiSocialLinkedin } from "react-icons/ti";
 import { FiGithub } from "react-icons/fi";
 import { Button } from "@/components/ui/button";
-import Particle from "../home/Particle";
 import ContactForm from "./ContactForm";
 import SectionTitle from "../shared/SectionTitle";
+import style3 from "@/assets/3.png";
+import Image from "next/image";
 
-type cornerStyle = {
-  style: Record<string, unknown>;
-  side: string;
-};
 
 const ContactMeHome = () => {
   const theme = useAppSelector((state) => state.theme.theme);
-  const corners: cornerStyle[] = [
-    {
-      style: {
-        width: 200,
-        height: 200,
-        position: "absolute",
-        opacity: 0.2,
-        bottom: 0,
-        left: 0,
-      },
-      side: "br",
-    },
-    {
-      style: {
-        width: 200,
-        height: 200,
-        position: "absolute",
-        opacity: 0.2,
-        top: 0,
-        right: 0,
-      },
-      side: "bl",
-    },
-  ];
+
   return (
     <div
       className={`relative w-full h-full 2xl:h-screen flex flex-col items-center justify-center px-2 pb-24 md:px-4 lg:px-0 bg-transparent`}
@@ -125,16 +99,14 @@ const ContactMeHome = () => {
             <ContactForm />
           </div>
         </div>
-        {corners.map((item, index) => (
-          <div
-            key={index}
-            style={item?.style}
-            className={`rounded-${item?.side}-full bg-[#8750F7] blur-3xl`}
-          ></div>
-        ))}
-      </div>
-      <div className="absolute right-0 top-0 h-full z-[2]">
-        <Particle />
+
+      <Image
+        src={style3}
+        alt="style"
+        width={100}
+        height={200}
+ className="absolute left-0 opacity-70 w-[10rem] h-[12rem] lg:w-[25rem] lg:h-[15rem] object-contain"      />
+
       </div>
     </div>
   );

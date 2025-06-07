@@ -18,3 +18,15 @@ export const getProfile = async () => {
     console.error(error);
   }
 };
+
+export const downloadResume = async (id: string) => {
+  const res = await fetch(`${backend_url}/profile/${id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+
+  const result = await res.json()
+  console.log(result)
+};

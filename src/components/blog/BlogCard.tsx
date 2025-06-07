@@ -14,17 +14,17 @@ const BlogCard = ({ blog }: { blog: TBlog }) => {
   return (
     <div className=" [perspective:1000px]">
     <Card
-      className={`hover:scale-110 rounded-xl overflow-hidden p-4 space-y-3 mx-w-[300px] transition-all duration-300 ${
+      className={`hover:scale-105 rounded-xl overflow-hidden p-4 space-y-3 mx-w-[300px] transition-all duration-300 h-96 ${
           theme === "dark" ? "bg-[#050709] border-[0.5px] border-[#2c2c2c] text-white" : "bg-[#F6F3FC] border-[0.5px] border-[#cecbcb] text-black"
         }`}
     >
       <div>
           <Image
-            src={thumbnail}
+            src={thumbnail || "https://img.freepik.com/free-vector/illustration-gallery-icon_53876-27002.jpg"}
             alt={"thumbnail"}
             width={200}
             height={300}
-            className="rounded-md w-full h-36 object-cover"
+            className="w-full h-36 object-cover"
           />
       </div>
       <CardContent className="space-y-1">

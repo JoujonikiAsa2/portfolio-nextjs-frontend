@@ -27,7 +27,7 @@ const BlogDetail = ({ blog }: { blog: TBlog | null }) => {
             alt="Blog"
             width={800}
             height={200}
-            className="w-full h-80 rounded-md object-contain bg-[#8757F7]/70"
+            className="w-full h-80 rounded-md object-contain bg-[#8757F7]/30"
           />
 
           {blog?.content ? (

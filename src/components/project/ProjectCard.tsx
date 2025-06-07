@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { useAppSelector } from "@/lib/hook";
 import { TProject } from "@/types/projects";
-// import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { CiLocationArrow1 } from "react-icons/ci";
 import { FiGithub } from "react-icons/fi";
@@ -11,7 +10,6 @@ import { Button } from "../ui/button";
 
 const ProjectCard = ({ project }: { project: TProject }) => {
   const theme = useAppSelector((state) => state.theme.theme);
-  console.log(project?.frontendLivelink);
   return (
     <div className=" [perspective:1000px]">
       <Card

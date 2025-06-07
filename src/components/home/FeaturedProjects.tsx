@@ -9,6 +9,7 @@ import { TProject } from "@/types/projects";
 import ProjectCard from "../project/ProjectCard";
 import { Button } from "../ui/button";
 import Link from "next/link";
+import ProjectCardSkeleton from "../project/ProjectCardSkeleton";
 
 const FeaturedProjects = () => {
   const { response } = useFetch(getProjects);
@@ -20,10 +21,21 @@ const FeaturedProjects = () => {
       <div className="w-full pb-10 flex justify-start">
         <SectionTitle title="Featured Projects" subTitle="" />
       </div>
-      <div className="w-full grid grid-cols-1 lg:grid-cols-3 gap-8 justify-between">
-        {projects?.slice(0, 3).map((project: TProject, index: number) => (
-          <ProjectCard key={index} project={project} />
-        ))}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-center justify-items-center items-center gap-4">
+        {projects?.length > 0 ? (
+            projects
+              ?.slice(0, 4)
+              ?.map((project: TProject, index: number) => (
+                <ProjectCard key={index} project={project} />
+              ))
+          ) : (
+            <>
+              <ProjectCardSkeleton />
+              <ProjectCardSkeleton />
+              <ProjectCardSkeleton />
+              <ProjectCardSkeleton />
+            </>
+          )}
       </div>
       <div className="w-full flex justify-center items-center mt-12">
         <Link href={"/project"}>
