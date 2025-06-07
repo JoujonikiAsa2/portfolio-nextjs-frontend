@@ -19,7 +19,7 @@ const ProjectDetails = ({ project }: { project: TProject | null }) => {
         theme === "dark" ? "dark-background text-white" : "light-background"
       }`}
     >
-      <div className="py-24 lg:py-0 w-full sm:w-[40rem] md:w-[48rem] lg:w-[64rem] xl:w-[80rem] mx-auto px-4 lg:px-0 gap-4">
+      <div className="w-full sm:w-[40rem] md:w-[48rem] lg:w-[64rem] xl:w-[80rem] mx-auto px-4 lg:px-0 gap-4">
         <div className="container mx-auto max-w-7xl">
           <div
             className={`border-b ${

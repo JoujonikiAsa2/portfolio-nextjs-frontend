@@ -12,7 +12,7 @@ const BlogDetail = ({ blog }: { blog: TBlog | null }) => {
         theme === "dark" ? "dark-background" : "light-background"
       }`}
     >
-      <div className=" space-y-6 py-24 lg:py-0 w-full sm:w-[40rem] md:w-[48rem] lg:w-[64rem] xl:w-[80rem] mx-auto px-4 lg:px-0 gap-4 h-full">
+      <div className=" space-y-6 w-full sm:w-[40rem] md:w-[48rem] lg:w-[64rem] xl:w-[80rem] mx-auto px-4 lg:px-0 gap-4 h-full">
         
           <h1 className="text-3xl font-bold text-white">{blog?.blogtitle}</h1>
           <p className="text-sm text-gray-500">

@@ -11,7 +11,7 @@ const AboutMe = () => {
     <div
       className={`relative  w-full  h-full 2xl:h-screen flex flex-col items-center justify-center px-2 py-28 md:px-4 lg:px-0 ${theme === "dark" ? "dark-background" : "light-background"}`}
     >
-      <div className="py-24 lg:py-0 flex flex-col lg:flex-row items-center justify-center w-full sm:w-[40rem] md:w-[48rem] lg:w-[64rem] xl:w-[80rem] mx-auto px-4 lg:px-0 gap-4 h-full">
+      <div className="flex flex-col lg:flex-row items-center justify-center w-full sm:w-[40rem] md:w-[48rem] lg:w-[64rem] xl:w-[80rem] mx-auto px-4 lg:px-0 gap-4 h-full">
         <div className="h-full w-full flex flex-col-reverse items-center md:flex-row justify-between gap-6 ">
           <div className="w-full md:text-left md:w-[60%] ">
             <div className="space-y-6 w-full">
@@ -80,7 +80,7 @@ const AboutMe = () => {
               <div></div>
             </div>
           </div>
-          <div className=" w-[40%] relative md:flex-1 flex justify-center lg:justify-end">
+          <div className="w-full md:w-[40%] relative md:flex-1 flex justify-center lg:justify-end">
             <div className="h-[400px] rounded-2xl bg-gray-300 mb-6 lg:mb-0">
               <Image
                 src={photo}
