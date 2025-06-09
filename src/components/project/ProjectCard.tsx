@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useAppSelector } from "@/lib/hook";
 import { TProject } from "@/types/projects";
-import { Card, CardContent, CardFooter } from "@/components/ui/card";
+import { Card, CardContent, CardFooter, CardTitle } from "@/components/ui/card";
 import { CiLocationArrow1 } from "react-icons/ci";
 import { FiGithub } from "react-icons/fi";
 import { Button } from "../ui/button";
@@ -32,6 +32,9 @@ const ProjectCard = ({ project }: { project: TProject }) => {
               priority
             />
           </div>
+          <CardTitle className="pt-6">
+           <h2 className="text-lg font-bold capitalize">{project?.title}</h2>
+          </CardTitle>
           <CardContent className="space-y-4 px-0 pt-4">
             <div
               className="text-muted-foreground line-clamp-3"

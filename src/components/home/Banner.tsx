@@ -66,7 +66,7 @@ const Banner = () => {
         ${theme === "dark" ? "dark-background" : "light-background"}
       }`}
     >
-      <div className="absolute right-0 top-0 h-full z-0 pointer-events-none">
+      <div className={`absolute right-0 top-0 h-full z-0 pointer-events-none`}>
         <Particle />
       </div>
 
