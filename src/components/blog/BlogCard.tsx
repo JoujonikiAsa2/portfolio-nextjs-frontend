@@ -29,7 +29,7 @@ const BlogCard = ({ blog }: { blog: TBlog }) => {
       </div>
       <CardContent className="space-y-1">
         <Badge className="text-sm">{category}</Badge>
-        <h2 className="text-lg font-bold">{blogtitle}</h2>
+        <h2 className="text-lg font-bold capitalize">{blogtitle}</h2>
         <p className="text-sm text-gray-400">
           By {authorname} on {publicationdate}
         </p>

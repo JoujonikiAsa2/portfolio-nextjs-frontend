@@ -224,7 +224,7 @@ const ProjectDetails = ({ project }: { project: TProject | null }) => {
                 {project?.features && project.features.length > 0 && (
                   <div>
                     <h2 className="text-2xl font-bold mb-4">Key Features</h2>
-                    <div className="grid gap-3 text-gray-400">
+                    <div className="grid gap-3 text-[#dddddd]">
                       {project.features.map((feature, index) => (
                         <div key={index} className="flex items-start gap-2">
                           <span
@@ -244,7 +244,7 @@ const ProjectDetails = ({ project }: { project: TProject | null }) => {
                     <h2 className="text-2xl font-bold mb-4">
                       Challenges & Solutions
                     </h2>
-                    <div className="grid gap-3 text-gray-400">
+                    <div className="grid gap-3 text-[#dddddd]">
                       {project.challenges.map((challenge, index) => (
                         <div key={index}>
                           <span

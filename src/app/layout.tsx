@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { sora } from "./font";
+import { roboto } from "./font";
 import { Toaster } from "sonner";
 import ClientOnly from "@/components/ClientOnly";
 import StoreProvider from "./storeProvider";
@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-    <body className={`${sora.className} antialiased  min-h-screen`}>
+    <body className={`${roboto.className} antialiased  min-h-screen`}>
     <StoreProvider>
       <ClientOnly>
           <Toaster />

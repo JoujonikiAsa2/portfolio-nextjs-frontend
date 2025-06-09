@@ -7,7 +7,10 @@ import "react-loading-skeleton/dist/skeleton.css";
 const BlogCardSkeleton = () => {
   const theme = useAppSelector((state) => state.theme.theme);
   return (
-    <SkeletonTheme baseColor="#050709" highlightColor="#321F59">
+    <SkeletonTheme
+      baseColor={theme === "dark" ? "#050709" : "#EDE9F3"}
+      highlightColor={theme === "dark" ? "#321F59" : "#D1C4E9"}
+    >
       <div
         className={`h-full w-full p-4 relative overflow-hidden rounded-xl ${
           theme === "dark"

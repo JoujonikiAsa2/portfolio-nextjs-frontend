@@ -61,7 +61,10 @@ const Skills = () => {
               ))
             ) : (
               <>
-                <SkeletonTheme baseColor="#050709" highlightColor="#321F59">
+                <SkeletonTheme
+                  baseColor={theme === "dark" ? "#050709" : "#EDE9F3"}
+                  highlightColor={theme === "dark" ? "#321F59" : "#D1C4E9"}
+                >
                   {" "}
                   <div className="w-16 h-16 transition-all rounded-xl">
                     <Skeleton
@@ -73,7 +76,10 @@ const Skills = () => {
                     />
                   </div>
                 </SkeletonTheme>
-                <SkeletonTheme baseColor="#050709" highlightColor="#321F59">
+                <SkeletonTheme
+                  baseColor={theme === "dark" ? "#050709" : "#EDE9F3"}
+                  highlightColor={theme === "dark" ? "#321F59" : "#D1C4E9"}
+                >
                   {" "}
                   <div className="w-16 h-16 transition-all rounded-xl">
                     <Skeleton
@@ -85,7 +91,10 @@ const Skills = () => {
                     />
                   </div>
                 </SkeletonTheme>
-                <SkeletonTheme baseColor="#050709" highlightColor="#321F59">
+                <SkeletonTheme
+                  baseColor={theme === "dark" ? "#050709" : "#EDE9F3"}
+                  highlightColor={theme === "dark" ? "#321F59" : "#D1C4E9"}
+                >
                   {" "}
                   <div className="w-16 h-16 transition-all rounded-xl">
                     <Skeleton
@@ -97,7 +106,10 @@ const Skills = () => {
                     />
                   </div>
                 </SkeletonTheme>
-                <SkeletonTheme baseColor="#050709" highlightColor="#321F59">
+                <SkeletonTheme
+                  baseColor={theme === "dark" ? "#050709" : "#EDE9F3"}
+                  highlightColor={theme === "dark" ? "#321F59" : "#D1C4E9"}
+                >
                   {" "}
                   <div className="w-16 h-16 transition-all rounded-xl">
                     <Skeleton
@@ -109,7 +121,10 @@ const Skills = () => {
                     />
                   </div>
                 </SkeletonTheme>
-                <SkeletonTheme baseColor="#050709" highlightColor="#321F59">
+                <SkeletonTheme
+                  baseColor={theme === "dark" ? "#050709" : "#EDE9F3"}
+                  highlightColor={theme === "dark" ? "#321F59" : "#D1C4E9"}
+                >
                   {" "}
                   <div className="w-16 h-16 transition-all rounded-xl">
                     <Skeleton
@@ -121,7 +136,10 @@ const Skills = () => {
                     />
                   </div>
                 </SkeletonTheme>
-                <SkeletonTheme baseColor="#050709" highlightColor="#321F59">
+                <SkeletonTheme
+                  baseColor={theme === "dark" ? "#050709" : "#EDE9F3"}
+                  highlightColor={theme === "dark" ? "#321F59" : "#D1C4E9"}
+                >
                   {" "}
                   <div className="w-16 h-16 transition-all rounded-xl">
                     <Skeleton
@@ -133,7 +151,10 @@ const Skills = () => {
                     />
                   </div>
                 </SkeletonTheme>
-                <SkeletonTheme baseColor="#050709" highlightColor="#321F59">
+                <SkeletonTheme
+                  baseColor={theme === "dark" ? "#050709" : "#EDE9F3"}
+                  highlightColor={theme === "dark" ? "#321F59" : "#D1C4E9"}
+                >
                   {" "}
                   <div className="w-16 h-16 transition-all rounded-xl">
                     <Skeleton
@@ -145,7 +166,10 @@ const Skills = () => {
                     />
                   </div>
                 </SkeletonTheme>
-                <SkeletonTheme baseColor="#050709" highlightColor="#321F59">
+                <SkeletonTheme
+                  baseColor={theme === "dark" ? "#050709" : "#EDE9F3"}
+                  highlightColor={theme === "dark" ? "#321F59" : "#D1C4E9"}
+                >
                   {" "}
                   <div className="w-16 h-16 transition-all rounded-xl">
                     <Skeleton
@@ -157,7 +181,10 @@ const Skills = () => {
                     />
                   </div>
                 </SkeletonTheme>
-                <SkeletonTheme baseColor="#050709" highlightColor="#321F59">
+                <SkeletonTheme
+                  baseColor={theme === "dark" ? "#050709" : "#EDE9F3"}
+                  highlightColor={theme === "dark" ? "#321F59" : "#D1C4E9"}
+                >
                   {" "}
                   <div className="w-16 h-16 transition-all rounded-xl">
                     <Skeleton
@@ -188,7 +215,10 @@ const Skills = () => {
                 ))
               ) : (
                 <>
-                  <SkeletonTheme baseColor="#050709" highlightColor="#321F59">
+                  <SkeletonTheme
+                    baseColor={theme === "dark" ? "#050709" : "#EDE9F3"}
+                    highlightColor={theme === "dark" ? "#321F59" : "#D1C4E9"}
+                  >
                     {" "}
                     <div className="w-[100px] h-12 transition-all rounded">
                       <Skeleton
@@ -199,7 +229,10 @@ const Skills = () => {
                       />
                     </div>
                   </SkeletonTheme>
-                  <SkeletonTheme baseColor="#050709" highlightColor="#321F59">
+                  <SkeletonTheme
+                    baseColor={theme === "dark" ? "#050709" : "#EDE9F3"}
+                    highlightColor={theme === "dark" ? "#321F59" : "#D1C4E9"}
+                  >
                     {" "}
                     <div className="w-[100px] h-12 transition-all rounded">
                       <Skeleton
@@ -210,7 +243,10 @@ const Skills = () => {
                       />
                     </div>
                   </SkeletonTheme>
-                  <SkeletonTheme baseColor="#050709" highlightColor="#321F59">
+                  <SkeletonTheme
+                    baseColor={theme === "dark" ? "#050709" : "#EDE9F3"}
+                    highlightColor={theme === "dark" ? "#321F59" : "#D1C4E9"}
+                  >
                     {" "}
                     <div className="w-[100px] h-12 transition-all rounded">
                       <Skeleton
@@ -221,7 +257,10 @@ const Skills = () => {
                       />
                     </div>
                   </SkeletonTheme>
-                  <SkeletonTheme baseColor="#050709" highlightColor="#321F59">
+                  <SkeletonTheme
+                    baseColor={theme === "dark" ? "#050709" : "#EDE9F3"}
+                    highlightColor={theme === "dark" ? "#321F59" : "#D1C4E9"}
+                  >
                     {" "}
                     <div className="w-[100px] h-12 transition-all rounded">
                       <Skeleton
