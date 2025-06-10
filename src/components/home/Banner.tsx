@@ -70,7 +70,7 @@ const Banner = () => {
         <Particle />
       </div>
 
-      <div className="flex flex-col-reverse md:flex-row items-center justify-center w-full sm:w-[40rem] md:w-[48rem] lg:w-[64rem] xl:w-[80rem] mx-auto h-full px-4 lg:px-0 gap-4 z-50">
+      <div className="flex flex-col-reverse md:flex-row items-center justify-center w-full sm:w-[40rem] md:w-[48rem] lg:w-[64rem] xl:w-[80rem] mx-auto h-full px-4 sm:px-8 lg:px-12 gap-4 z-50">
         <div className="space-y-4 h-[250px] w-full md:w-1/2">
           <h5
             className={`text-xl font-bold uppercase ${

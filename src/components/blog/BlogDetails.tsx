@@ -9,7 +9,7 @@ const BlogDetail = ({ blog }: { blog: TBlog | null }) => {
   const theme = useAppSelector((state) => state.theme.theme);
   return (
     <div
-      className={`font-normal relative  w-full  min-h-screen flex flex-col items-center justify-center px-2 py-28 md:px-4 lg:px-0 ${
+      className={`font-normal relative  w-full  min-h-screen flex flex-col items-center justify-center py-28 px-4 ${
         theme === "dark" ? "dark-background" : "light-background"
       }`}
     >

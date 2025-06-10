@@ -17,7 +17,7 @@ const ProjectList = () => {
 
   return (
     <div
-      className={`relative  w-full min-h-screen flex flex-col items-center justify-center px-2 py-28 md:px-4 lg:px-0 ${
+      className={`relative  w-full min-h-screen flex flex-col items-center justify-center py-28 ${
         theme === "dark" ? "dark-background" : "light-background"
       }`}
     >
@@ -26,8 +26,8 @@ const ProjectList = () => {
         subTitle="You can explore all projects here."
         theme={theme}
       />
-      <div className="md:py-24 lg:py-0 w-full sm:w-[40rem] md:w-[48rem] lg:w-[64rem] xl:w-[80rem] mx-auto px-4 lg:px-0 gap-4 h-full">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-center justify-items-center items-center gap-4">
+      <div className="w-full sm:w-[40rem] md:w-[48rem] lg:w-[64rem] xl:w-[80rem] px-4 mx-auto gap-4 h-full">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 justify-center justify-items-center items-center gap-6">
           {projects?.length > 0 ? (
             projects
               ?.slice(0, dataCount)
@@ -49,10 +49,10 @@ const ProjectList = () => {
         </div>
         <div
           className={`mt-12  ${
-          response?.data?.length === 0 || response?.data?.length > dataCount
-            ? "flex justify-center items-center"
-            : "hidden "
-        }`}
+            response?.data?.length === 0 || response?.data?.length > dataCount
+              ? "flex justify-center items-center"
+              : "hidden "
+          }`}
         >
           <Button onClick={() => setDataCount(dataCount + 8)}>Load More</Button>
         </div>

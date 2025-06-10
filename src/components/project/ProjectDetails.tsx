@@ -15,11 +15,11 @@ const ProjectDetails = ({ project }: { project: TProject | null }) => {
 
   return (
     <div
-      className={`relative w-full min-h-screen  flex flex-col items-center justify-center px-2 py-28 md:px-4 lg:px-0 ${
+      className={`relative w-full min-h-screen  flex flex-col items-center justify-center py-28 px-4 ${
         theme === "dark" ? "dark-background text-white" : "light-background"
       }`}
     >
-      <div className="w-full sm:w-[40rem] md:w-[48rem] lg:w-[64rem] xl:w-[80rem] mx-auto px-4 lg:px-0 gap-4">
+      <div className="w-full sm:w-[40rem] md:w-[48rem] lg:w-[64rem] xl:w-[80rem] mx-auto px-4 gap-4">
         <div className="container mx-auto max-w-7xl">
           <div
             className={`border-b ${

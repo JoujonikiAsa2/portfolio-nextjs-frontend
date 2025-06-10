@@ -47,7 +47,7 @@ type cornerStyle = {
     ];
     return (
       <div
-        className={`relative  w-full  h-[500px] flex flex-col items-center justify-center px-2 py-28 md:py-6 lg:py-0 md:px-4 lg:px-0 ${
+        className={`relative  w-full  h-[500px] flex flex-col items-center justify-center py-28 md:py-6 lg:py-0 px-4 ${
           theme === "dark" ? "bg-[#0F0715] text-white" : "bg-white"
         }`}
       >

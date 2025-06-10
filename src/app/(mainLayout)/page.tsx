@@ -5,6 +5,7 @@ import ContactMeHome from "@/components/contact/ContactMeHome";
 const Banner = dynamic(() => import("@/components/home/Banner"), { ssr: true });
 const Skills = dynamic(() => import("@/components/home/Skills"), { ssr: true });
 const FeaturedProjects = dynamic(() => import("@/components/home/FeaturedProjects"), { ssr: true });
+const FeaturedBlogs = dynamic(() => import("@/components/home/FeaturedBlogs"), { ssr: true });
 
 export const metadata: Metadata = {
   title: "Home | Joujoniki",
@@ -21,6 +22,7 @@ export default function Home() {
             <>
               <Skills />
               <FeaturedProjects />
+              <FeaturedBlogs/>
               <ContactMeHome/>
             </>
           </BaseContainer>

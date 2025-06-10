@@ -18,7 +18,7 @@ const BlogList = () => {
 
   return (
     <div
-      className={`relative  w-full  min-h-screen flex flex-col items-center justify-center px-2 py-28 md:px-4 lg:px-0 ${
+      className={`relative  w-full  min-h-screen flex flex-col items-center justify-center py-28 ${
         theme === "dark" ? "dark-background" : "light-background"
       }`}
     >
@@ -28,8 +28,8 @@ const BlogList = () => {
         theme={theme}
       />
 
-      <div className="md:py-24 lg:py-0 w-full sm:w-[40rem] md:w-[48rem] lg:w-[64rem] xl:w-[80rem] mx-auto px-4 lg:px-0 gap-4 h-full">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center justify-items-center items-center gap-6">
+      <div className="w-full sm:w-[40rem] md:w-[48rem] lg:w-[64rem] xl:w-[80rem] px-4 mx-auto gap-4 h-full">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 justify-center justify-items-center items-center gap-6">
           {blogs?.length > 0 ? (
             blogs
               ?.slice(0, dataCount)

@@ -14,13 +14,13 @@ const ContactMe = () => {
 
   return (
     <div
-      className={`w-full h-full 2xl:h-screen flex flex-col items-center justify-center px-2 py-28 md:px-4 lg:px-0 ${
+      className={`w-full h-full 2xl:h-screen flex flex-col items-center justify-center py-28 px-4 ${
         theme === "dark" ? "dark-background text-white" : "light-background"
       }`}
     >
-      <div className="relative z-20  flex flex-col lg:flex-row gap-6 items-center justify-center w-full sm:w-[40rem] md:w-[44rem] lg:w-[64rem] xl:w-[80rem] mx-auto h-full">
+      <div className="relative z-20  flex flex-col lg:flex-row gap-6 items-center justify-center w-full sm:w-[40rem] md:w-[44rem] lg:w-[60rem] xl:w-[75rem] mx-auto h-full">
         <div
-          className={`p-2 lg:p-10 shadow-lg rounded-xl h-full w-full flex flex-col lg:flex-row justify-between gap-8 ${
+          className={`p-4 lg:p-10 shadow-lg rounded-xl h-full w-full flex flex-col lg:flex-row justify-between gap-8 ${
             theme === "dark" ? "bg-[#050709] " : "bg-[#F6F3FC]"
           }`}
         >

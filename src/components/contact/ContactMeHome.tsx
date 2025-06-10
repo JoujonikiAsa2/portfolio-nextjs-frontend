@@ -16,13 +16,13 @@ const ContactMeHome = () => {
 
   return (
     <div
-      className={`relative w-full h-full 2xl:h-screen flex flex-col items-center justify-center px-2 pb-24 md:px-4 lg:px-0 bg-transparent`}
+      className={`relative w-full h-full 2xl:h-screen flex flex-col items-center justify-center pb-24 bg-transparent`}
     >
       {" "}
       <div className="w-full pb-10 flex justify-start">
         <SectionTitle title="Contact Me" subTitle="" />
       </div>
-      <div className={`z-20  flex flex-col lg:flex-row gap-6 items-center justify-center w-full sm:w-[40rem] md:w-[48rem] lg:w-[64rem] xl:w-[80rem] h-fit mx-auto`}>
+      <div className={`z-20  flex flex-col lg:flex-row gap-6 items-center justify-center w-full h-fit mx-auto`}>
         <div
           className={`lg:p-10 shadow-lg rounded-xl h-full w-full flex flex-col lg:flex-row justify-between gap-8 ${
             theme === "dark" ? "bg-[#050709] " : "bg-[#F6F3FC]"
