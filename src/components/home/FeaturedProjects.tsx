@@ -21,7 +21,7 @@ const FeaturedProjects = () => {
       <div className="w-full pb-10 flex justify-start">
         <SectionTitle title="Featured Projects" subTitle="" />
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-center justify-items-center items-center gap-4">
+      <div className="z-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-center justify-items-center items-center gap-4">
         {projects?.length > 0 ? (
             projects
               ?.slice(0, 4)
@@ -48,7 +48,7 @@ const FeaturedProjects = () => {
         alt="style"
         width={100}
         height={200}
-        className="absolute right-0 opacity-40 w-[10rem] h-[12rem] lg:w-[18rem] lg:h-[20rem] object-contain"
+        className="absolute right-0 opacity-40 w-[10rem] h-[12rem] lg:w-[18rem] lg:h-[20rem] object-contain z-10"
       />
     </div>
   );

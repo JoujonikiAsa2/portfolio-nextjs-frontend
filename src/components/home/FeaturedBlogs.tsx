@@ -2,7 +2,7 @@
 import React from "react";
 import SectionTitle from "../shared/SectionTitle";
 import Image from "next/image";
-import style2 from "@/assets/6.png";
+import style2 from "@/assets/5.png";
 import useFetch from "@/hooks/useFetch";
 import { Button } from "../ui/button";
 import Link from "next/link";
@@ -21,7 +21,7 @@ const FeaturedBlogs = () => {
       <div className="w-full pb-10 flex justify-start">
         <SectionTitle title="Featured blogs" subTitle="" />
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-center justify-items-center items-center gap-4">
+      <div className="z-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-center justify-items-center items-center gap-4">
         {blogs?.length > 0 ? (
             blogs
               ?.slice(0, 4)
@@ -48,7 +48,7 @@ const FeaturedBlogs = () => {
         alt="style"
         width={100}
         height={200}
-        className="absolute right-0 opacity-40 w-[10rem] h-[12rem] lg:w-[18rem] lg:h-[20rem] object-contain"
+        className="rotate-360 absolute left-0 opacity-40 w-[10rem] h-[12rem] lg:w-[18rem] lg:h-[20rem] object-contain z-10"
       />
     </div>
   );

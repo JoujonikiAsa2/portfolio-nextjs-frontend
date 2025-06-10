@@ -71,7 +71,7 @@ const Banner = () => {
       </div>
 
       <div className="flex flex-col-reverse md:flex-row items-center justify-center w-full sm:w-[40rem] md:w-[48rem] lg:w-[64rem] xl:w-[80rem] mx-auto h-full px-4 sm:px-8 lg:px-12 gap-4 z-50">
-        <div className="space-y-4 h-[250px] w-full md:w-1/2">
+        <div className="z-20 space-y-4 h-[250px] w-full md:w-1/2">
           <h5
             className={`text-xl font-bold uppercase ${
               theme === "dark" ? "text-white" : "text-black"
@@ -153,7 +153,7 @@ const Banner = () => {
           <div
             key={index}
             style={item?.style}
-            className={`rounded-${item?.side}-full bg-[#8750F7] blur-3xl`}
+            className={`rounded-${item?.side}-full bg-[#8750F7] blur-3xl z-10`}
           ></div>
         ))}
       </div>
