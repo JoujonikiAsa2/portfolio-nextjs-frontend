@@ -27,7 +27,7 @@ const ProjectList = () => {
         theme={theme}
       />
       <div className="w-full sm:w-[40rem] md:w-[48rem] lg:w-[64rem] xl:w-[80rem] px-4 mx-auto gap-4 h-full">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 justify-center justify-items-center items-center gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-center justify-items-center items-center gap-6">
           {projects?.length > 0 ? (
             projects
               ?.slice(0, dataCount)

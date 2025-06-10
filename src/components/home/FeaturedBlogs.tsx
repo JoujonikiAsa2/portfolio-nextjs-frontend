@@ -16,7 +16,7 @@ const FeaturedBlogs = () => {
   const blogs = response?.data;
   return (
     <div
-      className={`h-full w-full flex flex-col items-center justify-between py-24`}
+      className={`h-full w-full flex flex-col items-center justify-between pt-24`}
     >
       <div className="w-full pb-10 flex justify-start">
         <SectionTitle title="Featured blogs" subTitle="" />

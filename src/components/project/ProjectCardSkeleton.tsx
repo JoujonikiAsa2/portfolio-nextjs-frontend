@@ -12,7 +12,7 @@ const ProjectCardSkeleton = () => {
       highlightColor={theme === "dark" ? "#321F59" : "#D1C4E9"}
     >
       <div
-        className={`h-[480px] w-full p-4 relative overflow-hidden rounded-xl ${
+        className={`h-[480px] w-[290px] p-4 relative overflow-hidden rounded-xl ${
           theme === "dark"
             ? "bg-[#050709] border-[0.5px] border-[#2c2c2c] text-white"
             : "bg-[#F6F3FC] border-[0.5px] border-[#cecbcb] text-black"

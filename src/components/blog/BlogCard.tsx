@@ -14,7 +14,7 @@ const BlogCard = ({ blog }: { blog: TBlog }) => {
   return (
     <div className=" [perspective:1000px]">
     <Card
-      className={`p-4 hover:scale-105 rounded-xl overflow-hidden space-y-3 mx-w-[300px] transition-all duration-300 h-96 ${
+      className={`p-4 hover:scale-105 rounded-xl overflow-hidden space-y-3 w-[290px]  transition-all duration-300 h-96 ${
           theme === "dark" ? "bg-[#050709] border-[0.5px] border-[#2c2c2c] text-white" : "bg-[#F6F3FC] border-[0.5px] border-[#cecbcb] text-black"
         }`}
     >

@@ -16,12 +16,12 @@ const FeaturedProjects = () => {
   const projects = response?.data;
   return (
     <div
-      className={`h-full w-full flex flex-col items-center justify-between py-24`}
+      className={`h-full w-full flex flex-col items-center justify-between pt-24`}
     >
       <div className="w-full pb-10 flex justify-start">
         <SectionTitle title="Featured Projects" subTitle="" />
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-center justify-items-center items-center gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-center justify-items-center items-center gap-4">
         {projects?.length > 0 ? (
             projects
               ?.slice(0, 4)

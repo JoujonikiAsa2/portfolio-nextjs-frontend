@@ -13,7 +13,7 @@ const ProjectCard = ({ project }: { project: TProject }) => {
   return (
     <div className=" [perspective:1000px]">
       <Card
-        className={`group p-4 duration-500 hover:[transform:rotateX(32deg)] relative overflow-hidden rounded-xl ${
+        className={`group h-[550px] w-[290px] p-4 duration-500 hover:[transform:rotateX(32deg)] relative overflow-hidden rounded-xl ${
           theme === "dark"
             ? "bg-[#050709] border-[0.5px] border-[#2c2c2c] text-white"
             : "bg-[#F6F3FC] border-[0.5px] border-[#cecbcb] text-black"

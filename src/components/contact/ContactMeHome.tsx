@@ -16,7 +16,7 @@ const ContactMeHome = () => {
 
   return (
     <div
-      className={`relative w-full h-full 2xl:h-screen flex flex-col items-center justify-center pb-24 bg-transparent`}
+      className={`relative w-full h-full 2xl:h-screen flex flex-col items-center justify-center py-24 bg-transparent`}
     >
       {" "}
       <div className="w-full pb-10 flex justify-start">
